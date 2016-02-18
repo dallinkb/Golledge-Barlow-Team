@@ -9,7 +9,7 @@ package byui.cit260.desertescape.control;
  *
  * @author Dallin Barlow
  */
-public class puzzlesOold {
+public class Puzzles {
     
     public double treeCuttingCalculator(double diameter, double height, double strokes) { 
         
