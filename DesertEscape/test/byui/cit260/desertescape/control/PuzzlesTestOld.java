@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author Dallin Barlow
  */
-public class puzzlesTest {
+public class PuzzlesTestOld {
     
-    public puzzlesTest() {
+    public PuzzlesTestOld() {
     }
     
     @BeforeClass
@@ -40,7 +40,7 @@ public class puzzlesTest {
         double diameter = 5.0;
         double height = 6.0;
         double strokes = 3.0;
-        puzzles instance = new puzzles();
+        puzzlesOold instance = new puzzlesOold();
         double expResult = 10.0;
         double result = instance.treeCuttingCalculator(diameter, height, strokes);
         assertEquals(expResult, result, 0.01);
