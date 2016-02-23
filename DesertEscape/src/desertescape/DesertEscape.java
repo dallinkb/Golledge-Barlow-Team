@@ -5,17 +5,45 @@
  */
 package desertescape;
 
+import byui.cit260.desertescape.menu.Game;
+import byui.cit260.desertescape.menu.Player;
+import byui.cit260.desertescape.view.StartProgramView;
+
 /**
  *
  * @author Dallin Barlow
  */
 public class DesertEscape {
+    
+    private static Player player;
+    private static Game game;
+    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        //calls the startprogram class
+        StartProgramView startProgram = new StartProgramView();
+        
+        startProgram.startProgram();
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        DesertEscape.player = player;
+    }
+
+    public static Game getGame() {
+        return game;
+    }
+
+    public static void setGame(Game game) {
+        DesertEscape.game = game;
     }
     
 }
