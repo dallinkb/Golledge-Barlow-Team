@@ -5,7 +5,9 @@
  */
 package byui.cit260.desertescape.view;
 
+import byui.cit260.desertescape.view.MainMenuView
 import byui.cit260.desertescape.control.ProgramController;
+import byui.cit260.desertescape.menu.MainMenu;
 import byui.cit260.desertescape.menu.Player;
 import desertescape.DesertEscape;
 import java.util.Scanner;
@@ -31,8 +33,8 @@ public class StartProgramView {
         DesertEscape.setPlayer(player);
         
         displayWelcomeMessage(player.getName());
-        
-        System.out.println(playerName);
+
+        MainMenuView mainmenu
     }
     
     public String getPlayerName(){
