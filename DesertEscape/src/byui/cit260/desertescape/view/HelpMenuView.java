@@ -7,33 +7,11 @@ package byui.cit260.desertescape.view;
 
 /**
  *
- * @author Justin Golledge
+ * @author Dallin Barlow
  */
 public class HelpMenuView {
     
-    public final String MENU = "\n"
-            + "\n-------------------------------------------------------"
-            + "\n| Help Menu Option                                    |"
-            + "\n-------------------------------------------------------"
-            + "\nG - What is the goal of the game?"
-            + "\nM - How to move"
-            + "\nE - Estimating the amount of resources"
-            + "\nH - Harvesting resources"
-            + "\nD - Delivering resources to warehouse"
-            + "\nQ - Quit"
-            
-    public void displayMenu() {
+    public HelpMenuView(){
         
-        char selection = ' ';
-        do{
-            System.out.println(); // display the main menu
-            
-            String input = this.getInput(); //get the user's selection
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection); //do action based on selection
-           
-        } while (selection != 'E');
-                     
-    }  
+    }
 }

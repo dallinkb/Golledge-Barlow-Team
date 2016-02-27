@@ -4,76 +4,95 @@
  * and open the template in the editor.
  */
 package byui.cit260.desertescape.view;
+
+import java.util.Scanner;
+
 /**
  *
- * @author Justin Golledge
+ * @author Dallin Barlow
  */
- 
- private void displayNextView(Player player) {
- 
-    //display a custom welcome message
-        System.out.println("\n============================================================="
-                      + "\n Welcome to the game " +player.getName()
-                      + "\n See if you can escape what the Desert has to offer!"
-                      + "\n==============================================================");
-    
-    // Create MainMenuView object
-    MainMenuView mainMenuView = new MainMenuView();
-    
-    // Display the main menu view
-    mainMenuView.displayMainMenuView();
-  }
 public class MainMenuView {
+  
     private final String MENU = "\n"
             + "\n-----------------------------------------------"
-            + "\n| Main Menu Options                           |"
+            + "\n | Main Menu Options -------------------------|"
             + "\n-----------------------------------------------"
-            + "\n1 - New Game"
-            + "\n2 - Resume Game"
-            + "\n3 - Options"
-            + "\n4 - Help"
-            + "\n0 - Back"
+            + "\n1 = New Game "
+            + "\n2 = Resume Game"
+            + "\n3 = Options "
+            + "\n4 = Help "
+            + "\n0 = Back "
             + "\n-----------------------------------------------";
     
-    public void displayMenu() {
+    public void displayMenu(){
         
         char selection = ' ';
         do{
-            System.out.println(); // display the main menu
+            System.out.println(MENU);
             
-            String input = this.getInput(); //get the user's selection
-            selection = input.charAt(0); // get first character of string
+            String input = getInput();
+            selection = input.charAt(0);
             
-            this.doAction(selection); //do action based on selection
-           
-        } while (selection != 'E');
-                     
-    }  
-    public void doAction(char choice) {
-        
+            doAction(selection);
+            
+        }while( selection != '0' );
+    }
+    
+    public void doAction(char choice){
         switch (choice) {
-            case 'N': // Start a new game
-                this.startNewGame();
+            case '1': // Start a new game
+                startNewGame();
                 break;
-            case 'G': // get and start an exiting game
-                this.startExitingGame();
+            case '2': // get and start an exiting game
+                loadSavedGame();
                 break;
-            case 'H': // display the help menu
-                this.displayHelpMenu();
+            case '3': // display the options menu
+                displayOptionsMenu();
                 break;
-            case 'P': // pause game
-                this.pauseGame();
+            case '4': // help menu
+                displayHelpMenu();
                 break;
-            case 'S': // Save game
-                this.saveGame();
-                break;
-            case 'E': // Exit program
-                return;
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
         
-        return false
+        return false;
+    }
+    
+    public String getInput(){
+        Scanner keyboard = new Scanner(System.in);
+        String input = null;
+        boolean isValid = false;
+        
+        while(!isValid) {
+            System.out.println("Please select an option:  ");
+            input = keyboard.nextLine();
+            input = input.trim();
+            
+            if (input == null || input.length() == 0) {
+                System.err.println("Invalid input please input a correct character");
+            } else {
+                isValid = true;
+            }
+        }
+        
+       return input; 
+    }
+
+    private void startNewGame() {
+        System.out.println("Called Start new Game - not implemented yet");
+    }
+
+    private void loadSavedGame() {
+        System.out.println("Called Resume game - not implemented yet");
+    }
+
+    private void displayOptionsMenu() {
+        System.out.println("Called options menu - not implemented yet");
+    }
+
+    private void displayHelpMenu() {
+        System.out.println("Called Help menuda - not implemented yet");
     }
 }
