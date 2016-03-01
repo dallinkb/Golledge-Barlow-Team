@@ -56,8 +56,6 @@ public class MainMenuView {
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
-        
-        return false;
     }
     
     public String getInput(){
