@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.view;
+package byui.cit260.desertescape.view.menu;
 
+import byui.cit260.desertescape.view.menu.HelpMenuView;
 import java.util.Scanner;
 
 /**

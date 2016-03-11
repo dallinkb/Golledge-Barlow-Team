@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.view;
+package byui.cit260.desertescape.view.levels;
 
 /**
  *
  * @author Dallin Barlow
  */
-public class MoveView {
+public class CavesLevelView {
     
 }
