@@ -65,10 +65,10 @@ public class StartProgramView {
         welcome = 
                 "\n*********************************************" +
                 "\n*        Welcome to Desert Escape           *" +
-                "\n* In this game you are trying to escape from*" +
-                "\n*   desert planet in the future. You are    *" +
-                "\n* plagued by lack of supplies, human eating *" +
-                "\n* aliens and loneliess. You must return home  *" +
+                "\n* In this game you are trapt in the future. *" +
+                "\n* Survival and success is based upon your   *" +
+                "\n*  ability to make tough decisions, plan    *" +
+                "\n*       ahead, and overcome puzzles.        *" +
                 "\n*********************************************";
         
         System.out.println(welcome);

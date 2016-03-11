@@ -13,21 +13,24 @@ import java.util.Scanner;
  */
 public class MainMenuView {
   
-    private final String MENU = "\n"
-            + "\n-----------------------------------------------"
-            + "\n | Main Menu Options -------------------------|"
-            + "\n-----------------------------------------------"
-            + "\n1 = New Game "
-            + "\n2 = Resume Game"
-            + "\n3 = Options "
-            + "\n4 = Help "
-            + "\n0 = Back "
-            + "\n-----------------------------------------------";
-    
+    private final String MENU =
+            "\nN = New Game"
+            + "\nR = Resume Saved Game"
+            + "\nO = Options"
+            + "\nH = Help Menu"
+            + "\nE = Exit Game";
+    public void displayBanner(){
+        String bannerMM = "";
+        bannerMM =
+                "\n*********************************************"
+                +"\n___________Desert Escape Main Menu___________";
+        System.out.println(bannerMM);
+    }
     public void displayMenu(){
         
         char selection = ' ';
         do{
+            displayBanner();
             System.out.println(MENU);
             
             String input = getInput();
@@ -35,23 +38,24 @@ public class MainMenuView {
             
             doAction(selection);
             
-        }while( selection != '0' );
+        }while( selection != 'E' );
     }
     
     public void doAction(char choice){
         switch (choice) {
-            case '1': // Start a new game
+            case 'N': // Start a new game
                 startNewGame();
                 break;
-            case '2': // get and start an exiting game
+            case 'R': // get and start an exiting game
                 loadSavedGame();
                 break;
-            case '3': // display the options menu
+            case 'O': // display the options menu
                 displayOptionsMenu();
                 break;
-            case '4': // help menu
+            case 'H': // help menu
                 displayHelpMenu();
                 break;
+            case 'E': // exit Menu
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
@@ -69,17 +73,18 @@ public class MainMenuView {
             input = input.trim();
             
             if (input == null || input.length() == 0) {
-                System.err.println("Invalid input please input a correct character");
+                System.out.println("Invalid input please input a correct character");
             } else {
                 isValid = true;
             }
         }
         
-       return input; 
+       return input.toUpperCase(); 
     }
 
     private void startNewGame() {
-        System.out.println("Called Start new Game - not implemented yet");
+        NewGameView newGame = new NewGameView();
+        newGame.displayMenu();
     }
 
     private void loadSavedGame() {
@@ -87,10 +92,12 @@ public class MainMenuView {
     }
 
     private void displayOptionsMenu() {
-        System.out.println("Called options menu - not implemented yet");
+        OptionsView optionsView = new OptionsView();
+        optionsView.displayMenu();
     }
 
     private void displayHelpMenu() {
-        System.out.println("Called Help menuda - not implemented yet");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
     }
 }
