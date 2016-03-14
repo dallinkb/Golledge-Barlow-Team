@@ -5,8 +5,8 @@
  */
 package desertescape;
 
-import byui.cit260.desertescape.menu.Game;
-import byui.cit260.desertescape.menu.Player;
+import byui.cit260.desertescape.model.Game;
+import byui.cit260.desertescape.model.Player;
 import byui.cit260.desertescape.view.StartProgramView;
 
 /**

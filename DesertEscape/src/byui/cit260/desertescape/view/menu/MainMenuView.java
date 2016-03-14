@@ -24,7 +24,7 @@ public class MainMenuView {
         String bannerMM = "";
         bannerMM =
                 "\n*********************************************"
-                +"\n___________Desert Escape Main Menu___________";
+                +"\n___________Desert Escape Main Menu__________";
         System.out.println(bannerMM);
     }
     public void displayMenu(){

@@ -40,7 +40,7 @@ public class PuzzlesTest {
         double diameter = 5.0;
         double height = 6.0;
         double strokes = 3.0;
-        Puzzles instance = new Puzzles();
+        PuzzleController instance = new PuzzleController();
         double expResult = 10.0;
         double result = instance.treeCuttingCalculator(diameter, height, strokes);
         assertEquals(expResult, result, 0.01);

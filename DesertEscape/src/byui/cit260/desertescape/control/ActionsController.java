@@ -9,7 +9,7 @@ package byui.cit260.desertescape.control;
  *
  * @author Dallin Barlow
  */
-public class move {
+public class ActionsController {
     public double jetpackCalculator(double distance, double gravity){
         
         if (distance <= 0 || gravity <= 0){

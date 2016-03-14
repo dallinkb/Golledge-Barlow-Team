@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.menu;
+package byui.cit260.desertescape.model;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -12,28 +12,22 @@ import java.util.Objects;
  *
  * @author Dallin Barlow
  */
-public class Prologue implements Serializable{
+public class Player implements Serializable {
     
-    private String continues;
-    private MainMenu mainmenu;
+    private String name;
 
-    public Prologue() {
-        
-    }
-    
-
-    public MainMenu getMainmenu() {
-        return mainmenu;
+    public String getName() {
+        return name;
     }
 
-    public void setMainmenu(MainMenu mainmenu) {
-        this.mainmenu = mainmenu;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.mainmenu);
+        hash = 71 * hash + Objects.hashCode(this.name);
         return hash;
     }
 
@@ -48,17 +42,11 @@ public class Prologue implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Prologue other = (Prologue) obj;
-        if (!Objects.equals(this.mainmenu, other.mainmenu)) {
+        final Player other = (Player) obj;
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Prologue{" + "mainmenu=" + mainmenu + '}';
-    }
-    
     
 }

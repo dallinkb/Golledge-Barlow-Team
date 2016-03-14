@@ -5,7 +5,7 @@
  */
 package byui.cit260.desertescape.control;
 
-import byui.cit260.desertescape.menu.Player;
+import byui.cit260.desertescape.model.Player;
 
 /**
  *

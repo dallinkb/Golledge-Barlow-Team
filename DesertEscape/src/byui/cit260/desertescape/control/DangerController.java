@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.menu;
+package byui.cit260.desertescape.control;
 
 /**
  *
  * @author Dallin Barlow
  */
-public class Game {
+public class DangerController {
     
 }

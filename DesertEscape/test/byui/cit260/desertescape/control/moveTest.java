@@ -18,14 +18,14 @@ public class moveTest {
     }
 
     /**
-     * Test of jetpackCalculator method, of class move.
+     * Test of jetpackCalculator method, of class MovementController.
      */
     @Test
     public void testJetpackCalculator() {
         System.out.println("jetpackCalculator");
         double distance = 30.0;
         double gravity = 30.0;
-        move instance = new move();
+        MovementController instance = new MovementController();
         double expResult = 900.0;
         double result = instance.jetpackCalculator(distance, gravity);
         assertEquals(expResult, result, 0.0);
