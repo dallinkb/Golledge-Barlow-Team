@@ -7,8 +7,57 @@ package byui.cit260.desertescape.model;
 
 /**
  *
- * @author Dallin Barlow
+ * @author Justin Golledge
  */
 public class Map {
     
+    public static final int NUM_ROWS = 5;
+    public static final int NUM_COLS = 5;
+    
+    private Location[][] desert;
+    
+    public Map() {
+        desert = new Location[NUM_ROWS][NUM_COLS];
+        init();
+    }
+    public void init() {
+
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                Location loc = new Location();
+
+                //Create a random location type
+                loc.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
+                loc.setRow(row);
+                loc.setCol(col);
+
+                desert[row][col] = loc;
+            }
+        }
+    }
+
+    public String getMapString() {
+
+        String rtn = "";
+
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                rtn += desert[row][col].getType().name().charAt(0);
+                
+                if(desert[row][col].getHero() != null) {
+                    rtn += desert[row][col].getHero().getName().charAt(0);
+                }
+                
+                rtn += "\t";
+            }
+            rtn += "\n";
+        }
+
+        return rtn;
+    }
+
+    public Location getLocation(int row, int col) {
+        return desert[row][col];
+    }
+}
 }
