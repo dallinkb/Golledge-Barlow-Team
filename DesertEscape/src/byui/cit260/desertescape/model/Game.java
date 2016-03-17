@@ -5,6 +5,8 @@
  */
 package byui.cit260.desertescape.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author Justin Golledge
@@ -31,6 +33,40 @@ public class Game {
 
     public void setMap(Map map) {
         this.map = map;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + Objects.hashCode(this.player);
+        hash = 17 * hash + Objects.hashCode(this.map);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Game other = (Game) obj;
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" + "player=" + player + ", map=" + map + '}';
     }
     
 }

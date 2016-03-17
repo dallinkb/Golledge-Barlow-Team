@@ -6,6 +6,7 @@
 package byui.cit260.desertescape.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -13,19 +14,25 @@ import java.io.Serializable;
  */
 public class Location implements Serializable {
     
-            private LocationType type;
-            private String description;
-            private Item item;
-            private Player player;
-            private int row;
-            private int col;
+    private int num;
+    private String description;
+    private Action action;
+    private boolean visited;
+    private boolean blocked;
+    private char difficulty;
+    private Item items;
 
-    public LocationType getType() {
-        return type;
+    public Location() {
+    }
+    
+    
+
+    public int getNum() {
+        return num;
     }
 
-    public void setType(LocationType type) {
-        this.type = type;
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public String getDescription() {
@@ -36,36 +43,100 @@ public class Location implements Serializable {
         this.description = description;
     }
 
-    public Item getItem() {
-        return item;
+    public Action getAction() {
+        return action;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setAction(Action action) {
+        this.action = action;
     }
 
-    public Player getPlayer() {
-        return player;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
-    public int getRow() {
-        return row;
+    public boolean isBlocked() {
+        return blocked;
     }
 
-    public void setRow(int row) {
-        this.row = row;
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
-    public int getCol() {
-        return col;
+    public char getDifficulty() {
+        return difficulty;
     }
 
-    public void setCol(int col) {
-        this.col = col;
+    public void setDifficulty(char difficulty) {
+        this.difficulty = difficulty;
     }
+
+    public Item getItems() {
+        return items;
+    }
+
+    public void setItems(Item items) {
+        this.items = items;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + this.num;
+        hash = 41 * hash + Objects.hashCode(this.description);
+        hash = 41 * hash + Objects.hashCode(this.action);
+        hash = 41 * hash + (this.visited ? 1 : 0);
+        hash = 41 * hash + (this.blocked ? 1 : 0);
+        hash = 41 * hash + this.difficulty;
+        hash = 41 * hash + Objects.hashCode(this.items);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Location other = (Location) obj;
+        if (this.num != other.num) {
+            return false;
+        }
+        if (this.visited != other.visited) {
+            return false;
+        }
+        if (this.blocked != other.blocked) {
+            return false;
+        }
+        if (this.difficulty != other.difficulty) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.action, other.action)) {
+            return false;
+        }
+        if (!Objects.equals(this.items, other.items)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" + "num=" + num + ", description=" + description + ", action=" + action + ", visited=" + visited + ", blocked=" + blocked + ", difficulty=" + difficulty + ", items=" + items + '}';
+    }
+    
+    
     
 }

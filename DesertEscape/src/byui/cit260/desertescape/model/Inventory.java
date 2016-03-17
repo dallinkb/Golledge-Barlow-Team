@@ -11,4 +11,7 @@ package byui.cit260.desertescape.model;
  */
 public class Inventory {
     
+    private Item items;
+    private Location location;
+    private list
 }

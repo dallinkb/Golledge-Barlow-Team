@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Dallin Barlow
  */
-public class InspectView {
+public class BuyView {
     public void displayBanner(){
         String banner = "";
         banner =

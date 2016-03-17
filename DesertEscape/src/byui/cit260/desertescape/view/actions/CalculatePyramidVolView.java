@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Dallin Barlow
  */
-public class InspectView {
+public class CalculatePyramidVolView {
     public void displayBanner(){
         String banner = "";
         banner =

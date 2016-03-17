@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.view.actions;
+package byui.cit260.desertescape.view.levels;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Dallin Barlow
  */
-public class InspectView {
+public class PyramidsView {
     public void displayBanner(){
         String banner = "";
         banner =

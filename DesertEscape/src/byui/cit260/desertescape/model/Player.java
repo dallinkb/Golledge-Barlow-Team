@@ -15,7 +15,30 @@ import java.util.Objects;
 public class Player implements Serializable {
     
     private String name;
+    private int lives;
+    private Inventory inventory;
 
+    public Player() {
+    }
+    
+    
+
+    public int getLives() {
+        return lives;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+    
     public String getName() {
         return name;
     }
@@ -23,7 +46,8 @@ public class Player implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -47,6 +71,11 @@ public class Player implements Serializable {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", lives=" + lives + ", inventory=" + inventory + '}';
     }
     
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.view.actions;
+package byui.cit260.desertescape.view.achievements;
 
 import java.util.Scanner;
 
@@ -11,12 +11,14 @@ import java.util.Scanner;
  *
  * @author Dallin Barlow
  */
-public class InspectView {
+public class CannotProceed {
     public void displayBanner(){
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n               Cannot Proceed               "
+                +"\n Sorry, you cannot proceed to the next level"
+                +"\n until you have completed a certain action.";
         System.out.println(banner);
     }
     private final String MENU =
