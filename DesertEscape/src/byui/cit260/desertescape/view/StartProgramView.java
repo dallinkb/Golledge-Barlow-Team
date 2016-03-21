@@ -7,7 +7,6 @@ package byui.cit260.desertescape.view;
 
 import byui.cit260.desertescape.view.menu.MainMenuView;
 import byui.cit260.desertescape.control.ProgramController;
-import byui.cit260.desertescape.menu.MainMenu;
 import byui.cit260.desertescape.model.Player;
 import desertescape.DesertEscape;
 import java.util.Scanner;
