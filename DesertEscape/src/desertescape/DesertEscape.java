@@ -9,6 +9,25 @@ import byui.cit260.desertescape.model.Game;
 import byui.cit260.desertescape.model.Player;
 import byui.cit260.desertescape.view.StartProgramView;
 
+/********************************
+ * 
+ * TODO:
+ * 
+ * ViewInterface
+ * View (abstract class) (Lesson 08)
+ * 
+ * Make all "standard" views (excludes StartProgramView and Level Views) extend View class
+ * Also consider consolidating views into some standard views - e.g. GameMenuView
+ * 
+ * Initialize the Game - create the map - keep it two dimensional (Lesson 09)
+ * 
+ * Handle movement 
+ * 
+ * Create your own exceptions and throw them in certain parts of the code - Lesson 10
+ * 
+ *******************************/
+
+
 /**
  *
  * @author Dallin Barlow
