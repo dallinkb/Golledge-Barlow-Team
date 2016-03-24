@@ -5,6 +5,8 @@
  */
 package byui.cit260.desertescape.view.levels;
 
+import byui.cit260.desertescape.view.actions.InspectView;
+import byui.cit260.desertescape.view.actions.MoveView;
 import java.util.Scanner;
 
 /**
@@ -16,15 +18,14 @@ public class BaseView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\nBase";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nI - Inspect "
+            + "\nR - Run "
+            + "\nP - Pause"
+            + "\nB - Build";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -57,27 +58,45 @@ public class BaseView {
             
             doAction(selection);
             
-        }while( selection != '' );
+        }while( selection != ' ' );
     }
     public void doAction(char choice){
         switch (choice) {
-            case '':
-                
+            case 'I':
+                inSpect();
                 break;
-            case '': 
-                
+            case 'R': 
+                rUn();
                 break;
-            case '':
-                
+            case 'P':
+                paUse();
                 break;
-            case '':
-                
+            case 'B':
+                buIld();
                 break;
             case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
+    }
+
+    private void inSpect() {
+        InspectView inspect = new InspectView();
+        inspect.displayMenu();
+    }
+
+    private void rUn() {
+        MoveView run = new MoveView();
+        run.displayMenu();
+    }
+
+    private void paUse() {
+        
+    }
+
+    private void buIld() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

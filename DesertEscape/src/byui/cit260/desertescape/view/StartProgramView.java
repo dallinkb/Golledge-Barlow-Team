@@ -27,7 +27,8 @@ public class StartProgramView {
         
         String playerName = getPlayerName();
         
-        Player player = ProgramController.createPlayer(playerName);
+        Player player;
+        player = ProgramController.createPlayer(playerName);
         
         DesertEscape.setPlayer(player);
         

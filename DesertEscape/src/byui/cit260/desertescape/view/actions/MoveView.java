@@ -16,15 +16,13 @@ public class MoveView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n                      Run                   ";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nF - Move Forward"
+            + "\nB - Backward"
+            + "\nJ - Fast Travel Jetpack";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);

@@ -16,15 +16,13 @@ public class BuildView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n                   Build";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nT - Build Time Machine"
+            + "\nJ - Build Jetpack"
+            + "\nR - Return to Base";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -57,27 +55,31 @@ public class BuildView {
             
             doAction(selection);
             
-        }while( selection != '' );
+        }while( selection != 'R' );
     }
     public void doAction(char choice){
         switch (choice) {
-            case '':
-                
+            case 'T':
+                buildTimeMachine();
                 break;
-            case '': 
-                
+            case 'J': 
+                buildJetPack();
                 break;
-            case '':
-                
-                break;
-            case '':
-                
-                break;
-            case '': 
+            case 'R':
+                break; 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
+    }
+
+    private void buildTimeMachine() {
+        BuildTimeMachineView timemachine = new BuildTimeMachineView();
+        timemachine.displayMenu();
+    }
+
+    private void buildJetPack() {
+        String out = "";
     }
     
 }

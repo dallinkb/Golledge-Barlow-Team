@@ -16,15 +16,12 @@ public class InspectView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n                  Inspect                   ";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nK - Keep "
+            + "\nD - Discard";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);

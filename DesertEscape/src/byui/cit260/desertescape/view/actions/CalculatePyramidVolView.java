@@ -16,12 +16,12 @@ public class CalculatePyramidVolView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n        Calculate Pyramid Volume            ";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
+            "\nC - Calculate Pyramid Volume"
+            + "\nR - Return to Pyramid Level"
             + "\n - "
             + "\n - "
             + "\n - ";
@@ -57,27 +57,23 @@ public class CalculatePyramidVolView {
             
             doAction(selection);
             
-        }while( selection != '' );
+        }while( selection != 'R' );
     }
     public void doAction(char choice){
         switch (choice) {
-            case '':
-                
+            case 'C':
+                calculatePyramid();
                 break;
-            case '': 
-                
+            case 'R': 
                 break;
-            case '':
-                
-                break;
-            case '':
-                
-                break;
-            case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
+    }
+
+    private void calculatePyramid() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

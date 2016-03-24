@@ -16,15 +16,14 @@ public class LostaLifeView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n                    Lost a Life"
+                +"\n you lost a life, with it you lost all your "
+                +"\n food and money. You wake up at the base.";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nC - Continue to Base"
+            + "\nE - Exit to Main Menu";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -67,13 +66,6 @@ public class LostaLifeView {
             case '': 
                 
                 break;
-            case '':
-                
-                break;
-            case '':
-                
-                break;
-            case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;

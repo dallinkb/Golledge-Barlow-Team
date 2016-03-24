@@ -16,15 +16,13 @@ public class GameOverView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n                 Game Over "
+                +"\n       You have failed all of humanity";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nM - Main Menu "
+            + "\nE - Exit Game";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);

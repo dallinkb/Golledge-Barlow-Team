@@ -16,15 +16,14 @@ public class ChopDownTreeView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n              Chop Down Tree               "
+                +"\n you must chop down a tree to cross the "
+                +"\n mountain pass, if not you will fall and lose a life.";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nC - Chop Down Tree"
+            + "\nR - Return to Main Menu";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -57,27 +56,23 @@ public class ChopDownTreeView {
             
             doAction(selection);
             
-        }while( selection != '' );
+        }while( selection != 'R' );
     }
     public void doAction(char choice){
         switch (choice) {
-            case '':
-                
+            case 'C':
+                chopDown();
                 break;
-            case '': 
-                
+            case 'R':                
                 break;
-            case '':
-                
-                break;
-            case '':
-                
-                break;
-            case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
+    }
+
+    private void chopDown() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
