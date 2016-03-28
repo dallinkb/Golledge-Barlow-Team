@@ -15,29 +15,13 @@ import java.util.Objects;
 public class Player implements Serializable {
     
     private String name;
-    private int lives;
-    private Inventory inventory;
+    private List<Item> inventory
 
     public Player() {
     }
-    
-    
 
-    public int getLives() {
-        return lives;
-    }
 
-    public void setLives(int lives) {
-        this.lives = lives;
-    }
 
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
-    }
     
     public String getName() {
         return name;

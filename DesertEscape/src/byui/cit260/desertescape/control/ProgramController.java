@@ -13,6 +13,11 @@ import byui.cit260.desertescape.model.Player;
  */
 public class ProgramController {
     
+    /**
+     *
+     * @param playerName
+     * @return
+     */
     public static Player createPlayer(String playerName) {
         
         if (playerName == null){
@@ -23,5 +28,4 @@ public class ProgramController {
         p.setName(playerName);
         return p;
     }
-    public static Game 
 }

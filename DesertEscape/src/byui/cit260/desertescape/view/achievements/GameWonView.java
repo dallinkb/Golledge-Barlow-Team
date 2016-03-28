@@ -16,12 +16,16 @@ public class GameWonView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n                    Winner"
+                +"\n You were able to travel back in time and"
+                +"\nwarn the people of earth that the aliens "
+                +"\nwould attack, You have saved all of humanity"
+                +"\nand won the game.";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
+            "\nM - Main Menu"
+            + "\nE - Exit Game"
             + "\n - "
             + "\n - "
             + "\n - ";

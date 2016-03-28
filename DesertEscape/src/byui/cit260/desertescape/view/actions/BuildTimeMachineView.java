@@ -16,15 +16,13 @@ public class BuildTimeMachineView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n             Build Time Machine             ";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nB - Build Time Machine"
+            + "\nU - Use Time Machine"
+            + "\nR - Return to Build Menu";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -57,27 +55,30 @@ public class BuildTimeMachineView {
             
             doAction(selection);
             
-        }while( selection != '' );
+        }while( selection != 'R' );
     }
     public void doAction(char choice){
         switch (choice) {
-            case '':
-                
+            case 'B':
+                buildTimeMachine();
                 break;
-            case '': 
-                
+            case 'U': 
+                useTimeMachine();
                 break;
-            case '':
-                
+            case 'R':
                 break;
-            case '':
-                
-                break;
-            case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
+    }
+
+    private void buildTimeMachine() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void useTimeMachine() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

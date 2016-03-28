@@ -22,11 +22,7 @@ public class CannotProceed {
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\n R - Return to Previous Level ";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);

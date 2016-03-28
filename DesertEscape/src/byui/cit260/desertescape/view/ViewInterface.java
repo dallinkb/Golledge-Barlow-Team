@@ -9,7 +9,7 @@ package byui.cit260.desertescape.view;
  *
  * @author Justin Golledge
  */
-public class ViewInterface {
+public interface ViewInterface {
     
     public void display();
 

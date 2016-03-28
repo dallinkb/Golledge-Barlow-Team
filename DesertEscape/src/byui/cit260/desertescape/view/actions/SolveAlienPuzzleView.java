@@ -16,15 +16,12 @@ public class SolveAlienPuzzleView {
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n               Solve Alien Puzzle           ";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nS - Solve Puzzle"
+            + "\nR - Return to Alien Camp";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -57,27 +54,23 @@ public class SolveAlienPuzzleView {
             
             doAction(selection);
             
-        }while( selection != '' );
+        }while( selection != 'R' );
     }
     public void doAction(char choice){
         switch (choice) {
-            case '':
-                
+            case 'S':
+                soLve();
                 break;
-            case '': 
-                
+            case 'R': 
                 break;
-            case '':
-                
-                break;
-            case '':
-                
-                break;
-            case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
+    }
+
+    private void soLve() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
