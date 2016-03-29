@@ -5,6 +5,7 @@
  */
 package byui.cit260.desertescape.view.menu;
 
+import byui.cit260.desertescape.view.View;
 import byui.cit260.desertescape.view.menu.HelpMenuView;
 import java.util.Scanner;
 
@@ -12,38 +13,24 @@ import java.util.Scanner;
  *
  * @author Dallin Barlow
  */
-public class MainMenuView {
-  
-    private final String MENU =
-            "\nN = New Game"
+public class MainMenuView extends View {
+    
+    public MainMenuView(){
+        super("\n*********************************************"
+            +"\n___________Desert Escape Main Menu__________"
+            + "\nN = New Game"
             + "\nR = Resume Saved Game"
             + "\nO = Options"
             + "\nH = Help Menu"
-            + "\nE = Exit Game";
-    public void displayBanner(){
-        String bannerMM = "";
-        bannerMM =
-                "\n*********************************************"
-                +"\n___________Desert Escape Main Menu__________";
-        System.out.println(bannerMM);
-    }
-    public void displayMenu(){
-        
-        char selection = ' ';
-        do{
-            displayBanner();
-            System.out.println(MENU);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        }while( selection != 'E' );
+            + "\nE = Exit Game");
     }
     
-    public void doAction(char choice){
-        switch (choice) {
+    
+    @Override
+    public boolean doAction(String value){
+        char input=value.charAt(0);
+        
+        switch (input) {
             case 'N': // Start a new game
                 startNewGame();
                 break;
@@ -56,36 +43,18 @@ public class MainMenuView {
             case 'H': // help menu
                 displayHelpMenu();
                 break;
-            case 'E': // exit Menu
+            case 'Q': // exit Menu
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
+        return false;
     }
     
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid) {
-            System.out.println("Please select an option:  ");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if (input == null || input.length() == 0) {
-                System.out.println("Invalid input please input a correct character");
-            } else {
-                isValid = true;
-            }
-        }
-        
-       return input.toUpperCase(); 
-    }
-
+    
     private void startNewGame() {
         NewGameView newGame = new NewGameView();
-        newGame.displayMenu();
+        newGame.display();
     }
 
     private void loadSavedGame() {
@@ -94,11 +63,11 @@ public class MainMenuView {
 
     private void displayOptionsMenu() {
         OptionsView optionsView = new OptionsView();
-        optionsView.displayMenu();
+        optionsView.display();
     }
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 }

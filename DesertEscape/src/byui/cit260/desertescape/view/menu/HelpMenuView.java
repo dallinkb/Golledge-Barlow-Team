@@ -5,47 +5,28 @@
  */
 package byui.cit260.desertescape.view.menu;
 
+import byui.cit260.desertescape.view.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Dallin Barlow
  */
-public class HelpMenuView {
-    // banner for help menu
-     public void displayBanner(){
-        String banner= " ";
-        banner= "\n*********************************************"
-                +"\n__________________Help Menu_________________";
-        System.out.println(banner);
-    }
-    // string list for the user to input directions
-    private final String menu = 
-            "\nG - About Game"
+public class HelpMenuView extends View {
+
+     public HelpMenuView(){
+            super("\n*********************************************"
+            +"\n__________________Help Menu_________________"
+            +"\nG - About Game"
             +"\nL - Levels Help"
             +"\nI - Item Help"
-            +"\nB - Back";
-    // displays the banner and string list for the user to see
-    public void displayMenu(){
-        char selection = ' ';
-        
-        //while loop will continue to show the help menu screen unless user inputs B
-        while('B' != selection){
-            //displays banner
-            displayBanner();
-            //displays user's choices for menu
-            System.out.println(menu);
-            
-            //gets the input from the user
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            //executes the action that was input by the user
-            doAction(selection);
-        }
-    }
-    public void doAction(char choice){
-        switch(choice){
+            +"\nQ - Back");
+     }
+
+     @Override
+    public boolean doAction(String value){
+        char input = value.charAt(0);
+        switch(input){
             case 'G':
                 aboutGame();
                 break;
@@ -55,40 +36,18 @@ public class HelpMenuView {
             case 'I':
                 displayItemHelp();
                 break;
-            case 'B':
+            case 'Q':
                 break;
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
-    }
-    
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid){
-            System.out.println("Please select an option:  ");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if (input == null || input.length() == 0) {
-                System.out.println("Invalid input please input a correct character");
-            } 
-            else {
-                isValid = true;
-            }
-        }
-        return input.toUpperCase();
-    }
-    public HelpMenuView(){
-        
+        return false;
     }
 
     private void displayLevelHelp() {
         LevelsHelpView levelHelp = new LevelsHelpView();
-        levelHelp.displayMenu();
+        levelHelp.display();
     }
 
     private void aboutGame() {
@@ -113,6 +72,6 @@ public class HelpMenuView {
 
     private void displayItemHelp() {
        ItemsHelpView itemHelp = new ItemsHelpView();
-       itemHelp.displayMenu();
+       itemHelp.display();
     }
 }

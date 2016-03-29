@@ -8,7 +8,7 @@ package byui.cit260.desertescape.view.levels;
 import byui.cit260.desertescape.view.actions.BuildView;
 import byui.cit260.desertescape.view.actions.InspectView;
 import byui.cit260.desertescape.view.actions.MoveView;
-import byui.cit260.desertescape.view.menu.PauseMenuView;
+import byui.cit260.desertescape.view.menu.GameMenuView;
 import java.util.Scanner;
 import javafx.scene.shape.MoveTo;
 
@@ -94,7 +94,7 @@ public class BaseView {
     }
 
     private void paUse() {
-        PauseMenuView pause = new PauseMenuView();
+        GameMenuView pause = new GameMenuView();
         pause.displayMenu();
     }
 
