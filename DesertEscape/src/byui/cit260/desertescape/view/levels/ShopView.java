@@ -5,26 +5,27 @@
  */
 package byui.cit260.desertescape.view.levels;
 
+import byui.cit260.desertescape.view.actions.BuyView;
+import byui.cit260.desertescape.view.actions.MoveView;
+import byui.cit260.desertescape.view.actions.SellView;
 import java.util.Scanner;
 
 /**
  *
- * @author Dallin Barlow
+ * @author Justin Golledge
  */
 public class ShopView {
     public void displayBanner(){
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n______________________________";
+                +"\n_______________Shop_______________";
         System.out.println(banner);
     }
     private final String MENU =
-            "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nB - Buy"
+            + "\nS - Sell"
+            + "\nR - Run";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -61,23 +62,34 @@ public class ShopView {
     }
     public void doAction(char choice){
         switch (choice) {
-            case '':
-                
+            case 'B':
+                bUy();
                 break;
-            case '': 
-                
+            case 'S': 
+                seLl();
                 break;
-            case '':
+            case 'R':
+                rUn();
                 
-                break;
-            case '':
-                
-                break;
-            case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
+    }
+
+    private void bUy() {
+        BuyView buy = new BuyView();
+        buy.displayMenu();
+    }
+
+    private void seLl() {
+        SellView sell = new SellView();
+        sell.displayMenu();
+    }
+
+    private void rUn() {
+        MoveView run = new MoveView();
+        run.displayMenu();
     }
     
 }

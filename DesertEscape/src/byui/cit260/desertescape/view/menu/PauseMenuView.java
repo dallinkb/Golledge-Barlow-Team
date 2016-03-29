@@ -12,67 +12,62 @@ import java.util.Scanner;
  * @author Dallin Barlow
  */
 public class PauseMenuView {
-    
-    
-    public void displayMenu(){
+
+    public void displayMenu() {
         char selection = ' ';
-        
+
         //while loop will continue to show the help menu screen unless user inputs B
-        while('' != selection){
+        while (' ' != selection) {
             //displays banner
-            displayBanner();
+//            displayBanner();
             //displays user's choices for menu
-            System.out.println(menu);
-            
+//            System.out.println(menu);
+
             //gets the input from the user
             String input = getInput();
             selection = input.charAt(0);
-            
+
             //executes the action that was input by the user
             doAction(selection);
         }
     }
-    
-    public void doAction(char choice){
-        switch(choice){
-            case '':
+
+    public void doAction(char choice) {
+        switch (choice) {
+            case 'A':
                 ;
                 break;
-            case '':
+            case 'B':
                 ;
                 break;
-            case '':
+            case 'C':
                 ;
                 break;
-            case '':
+            case 'D':
                 break;
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
     }
-    
-    public String getInput(){
+
+    public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
         boolean isValid = false;
-        
-        while(!isValid){
+
+        while (!isValid) {
             System.out.println("Please select an option:  ");
             input = keyboard.nextLine();
             input = input.trim();
-            
+
             if (input == null || input.length() == 0) {
                 System.out.println("Invalid input please input a correct character");
-            } 
-            else {
+            } else {
                 isValid = true;
             }
         }
         return input.toUpperCase();
     }
-    
-    public void (){
-        
-    }
+
 }

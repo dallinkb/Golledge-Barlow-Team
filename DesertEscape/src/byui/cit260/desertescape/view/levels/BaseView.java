@@ -5,25 +5,28 @@
  */
 package byui.cit260.desertescape.view.levels;
 
+import byui.cit260.desertescape.view.actions.BuildView;
 import byui.cit260.desertescape.view.actions.InspectView;
 import byui.cit260.desertescape.view.actions.MoveView;
+import byui.cit260.desertescape.view.menu.PauseMenuView;
 import java.util.Scanner;
+import javafx.scene.shape.MoveTo;
 
 /**
  *
- * @author Dallin Barlow
+ * @author Justin Golledge
  */
 public class BaseView {
     public void displayBanner(){
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\nBase";
+                +"\n_______________Base_______________";
         System.out.println(banner);
     }
     private final String MENU =
-            "\nI - Inspect "
-            + "\nR - Run "
+            "\nI - Inspect"
+            + "\nR - Run"
             + "\nP - Pause"
             + "\nB - Build";
     
@@ -74,7 +77,6 @@ public class BaseView {
             case 'B':
                 buIld();
                 break;
-            case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
@@ -92,11 +94,13 @@ public class BaseView {
     }
 
     private void paUse() {
-        
+        PauseMenuView pause = new PauseMenuView();
+        pause.displayMenu();
     }
 
     private void buIld() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        BuildView build = new BuildView();
+        build.displayMenu();
     }
     
 }
