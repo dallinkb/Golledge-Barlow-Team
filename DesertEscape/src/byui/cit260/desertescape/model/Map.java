@@ -16,10 +16,10 @@ public class Map implements Serializable{
     public static final int NUM_ROWS = 5;
     public static final int NUM_COLS = 5;
     
-    private Location[][] desert;
+    private Location[][] matrix;
     
     public Map() {
-        desert = new Location[NUM_ROWS][NUM_COLS];
+        matrix = new Location[NUM_ROWS][NUM_COLS];
         init();
     }
     public void init() {
@@ -45,9 +45,6 @@ public class Map implements Serializable{
         for (int row = 0; row < NUM_ROWS; row++) {
             for (int col = 0; col < NUM_COLS; col++) {
                 rtn += desert[row][col].getType().name().charAt(0);
-                
-                if(desert[row][col].getHero() != null) {
-                    rtn += desert[row][col].getHero().getName().charAt(0);
                 }
                 
                 rtn += "\t";
@@ -59,7 +56,7 @@ public class Map implements Serializable{
     }
 
     public Location getLocation(int row, int col) {
-        return desert[row][col];
+        return matrix[row][col];
     }
 }
 }

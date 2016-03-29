@@ -5,17 +5,17 @@
  */
 package byui.cit260.desertescape.view.menu;
 
+import byui.cit260.desertescape.view.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Dallin Barlow
  */
-public class NewGameView {
+public class NewGameView extends View {
 
-    public void displayBanner() {
-        String banner = " ";
-        banner = "\n**************************************************************************************************************************"
+    public NewGameView() {
+        super("\n**************************************************************************************************************************"
                 + "\n_______________________________________________________New Game__________________________________________________________"
                 + "\n has just woken up. You don't know what happened, why it's so glum. Suddenly you hear an something bark something at you."
                 + "\nYou turn to see an alien, he puts a collar on you and turns it on. Suddenly his barking becomes understandable,"
@@ -36,8 +36,8 @@ public class NewGameView {
                 + "\n"
                 + "\nYou steal a backpack, a map, food pouch, coin purse and a pair of boots. You find a place on the man"
                 + "\nlabeled no one's land, you decide it to be safe so you go there and fall asleep. Then you wake up with the determination"
-                + "\nthat you have to save humanity from this terrible tragedy. You must find a way to get back to your time and tell the others about this.";
-        System.out.println(banner);
+                + "\nthat you have to save humanity from this terrible tragedy. You must find a way to get back to your time and tell the others about this.");
+       
     }
 
     private final String menu

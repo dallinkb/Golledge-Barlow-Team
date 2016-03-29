@@ -7,14 +7,10 @@ package byui.cit260.desertescape.model;
 
 /**
  *
- * @author Dallin Barlow
+ * @author Justin Golledge
  */
-public class LocationType {
-    
-    Base,
-    Desert,
-    Pyramid,
-    Alien Camp,
-    Mountain,
-    Shop
+public enum LocationType {
+    base,
+    desert,
+    mountain
 }

@@ -5,22 +5,21 @@
  */
 package byui.cit260.desertescape.view.menu;
 
+import byui.cit260.desertescape.view.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Dallin Barlow
  */
-public class LevelsHelpView {
+public class LevelsHelpView extends View {
     
-    public void displayBanner(){
-        String banner = "";
-        banner= "\n*********************************************"
+    public LevelsHelpView(){
+        super("\n*********************************************"
                 +"\n__________________Levels____________________"
                 +"\n this is a list of the levels and what one  "
                 +"\n can expect in each level, as well as how to"
-                +"\n          prepare for each level.           ";
-        System.out.println(banner);;
+                +"\n          prepare for each level.           ");
     }
     private final String menu=
             "\nO - Overview"+
@@ -49,7 +48,8 @@ public class LevelsHelpView {
         }
     }
     
-    public void doAction(char choice){
+    public void doAction(String value){
+        char input = value.charAt(0);
         String out = "";
         switch(choice){
             case 'O':
