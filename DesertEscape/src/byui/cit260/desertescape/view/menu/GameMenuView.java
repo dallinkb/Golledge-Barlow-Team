@@ -6,6 +6,7 @@
 package byui.cit260.desertescape.view.menu;
 
 import byui.cit260.desertescape.view.View;
+import desertescape.DesertEscape;
 import java.util.Scanner;
 
 /**
@@ -89,7 +90,7 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(DesertEscape.getGame().getMap().getMapString());
     }
 
     private void viewInventory() {

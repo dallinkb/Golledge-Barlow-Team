@@ -21,6 +21,7 @@ public class Location implements Serializable {
     private boolean blocked;
     private char difficulty;
     private Item items;
+    private LocationType type;
 
     public Location() {
     }
