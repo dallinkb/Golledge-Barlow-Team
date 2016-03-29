@@ -11,7 +11,7 @@ import java.util.Objects;
 /**
  *
  * @author Justin Golledge
- */
+ */hi
 public class Location implements Serializable {
     
     private int num;
