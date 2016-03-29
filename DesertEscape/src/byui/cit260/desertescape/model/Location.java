@@ -18,8 +18,6 @@ public class Location implements Serializable {
     private Action action;
     private Item items;
     private LocationType type;
-    private int row;
-    private int col;
 
     public Location() {
     }
