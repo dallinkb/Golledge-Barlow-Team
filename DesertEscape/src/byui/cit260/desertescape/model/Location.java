@@ -14,25 +14,14 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
     
-    private int num;
     private String description;
     private Action action;
-    private boolean visited;
-    private boolean blocked;
-    private char difficulty;
     private Item items;
+    private LocationType type;
+    private int row;
+    private int col;
 
     public Location() {
-    }
-    
-    
-
-    public int getNum() {
-        return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
     }
 
     public String getDescription() {
@@ -51,30 +40,6 @@ public class Location implements Serializable {
         this.action = action;
     }
 
-    public boolean isVisited() {
-        return visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
-    }
-
-    public boolean isBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(boolean blocked) {
-        this.blocked = blocked;
-    }
-
-    public char getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(char difficulty) {
-        this.difficulty = difficulty;
-    }
-
     public Item getItems() {
         return items;
     }
@@ -83,60 +48,28 @@ public class Location implements Serializable {
         this.items = items;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + this.num;
-        hash = 41 * hash + Objects.hashCode(this.description);
-        hash = 41 * hash + Objects.hashCode(this.action);
-        hash = 41 * hash + (this.visited ? 1 : 0);
-        hash = 41 * hash + (this.blocked ? 1 : 0);
-        hash = 41 * hash + this.difficulty;
-        hash = 41 * hash + Objects.hashCode(this.items);
-        return hash;
+    public LocationType getType() {
+        return type;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (this.num != other.num) {
-            return false;
-        }
-        if (this.visited != other.visited) {
-            return false;
-        }
-        if (this.blocked != other.blocked) {
-            return false;
-        }
-        if (this.difficulty != other.difficulty) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.action, other.action)) {
-            return false;
-        }
-        if (!Objects.equals(this.items, other.items)) {
-            return false;
-        }
-        return true;
+    public void setType(LocationType type) {
+        this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return "Location{" + "num=" + num + ", description=" + description + ", action=" + action + ", visited=" + visited + ", blocked=" + blocked + ", difficulty=" + difficulty + ", items=" + items + '}';
+    public int getRow() {
+        return row;
     }
-    
-    
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
     
 }
