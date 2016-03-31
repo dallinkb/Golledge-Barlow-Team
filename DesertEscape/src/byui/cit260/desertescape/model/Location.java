@@ -23,14 +23,6 @@ public class Location implements Serializable {
     public Location() {
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Action getAction() {
         return action;
     }
