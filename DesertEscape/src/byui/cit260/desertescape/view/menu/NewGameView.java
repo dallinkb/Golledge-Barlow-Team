@@ -36,50 +36,9 @@ public class NewGameView extends View {
                 + "\n"
                 + "\nYou steal a backpack, a map, food pouch, coin purse and a pair of boots. You find a place on the man"
                 + "\nlabeled no one's land, you decide it to be safe so you go there and fall asleep. Then you wake up with the determination"
-                + "\nthat you have to save humanity from this terrible tragedy. You must find a way to get back to your time and tell the others about this.");
-       
-    }
-
-    private final String menu
-            = "\nC - Continue to Base and Start Game"
-            + "\nM - Return to Main Menu";
-
-    public void displayMenu() {
-        char selection = ' ';
-
-        //while loop will continue to show the help menu screen unless user inputs B
-        while ('M' != selection) {
-            //displays banner
-            displayBanner();
-            //displays user's choices for menu
-            System.out.println(menu);
-
-            //gets the input from the user
-            String input = getInput();
-            selection = input.charAt(0);
-
-            //executes the action that was input by the user
-            doAction(selection);
-        }
-    }
-
-    public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-
-        while (!isValid) {
-            System.out.println("Please select an option:  ");
-            input = keyboard.nextLine();
-            input = input.trim();
-
-            if (input == null || input.length() == 0) {
-                System.out.println("Invalid input please input a correct character");
-            } else {
-                isValid = true;
-            }
-        }
-        return input.toUpperCase();
+                + "\nthat you have to save humanity from this terrible tragedy. You must find a way to get back to your time and tell the others about this."
+                + "\nC - Continue to Base and Start Game"
+                + "\nM - Return to Main Menu");
     }
 
     public void doAction(char choice) {

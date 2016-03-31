@@ -33,7 +33,7 @@ public class Map implements Serializable{
                 loc.setRow(row);
                 loc.setCol(col);
 
-                desert[row][col] = loc;
+                matrix[row][col] = loc;
             }
         }
     }
