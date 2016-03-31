@@ -6,7 +6,10 @@
 package byui.cit260.desertescape.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,30 +18,16 @@ import java.util.Objects;
 public class Player implements Serializable {
     
     private String name;
-    private int lives;
-    private Inventory inventory;
+    List<Item> inventory;
+    Location location;
+    List<Game> lives;
 
     public Player() {
-    }
+        inventory = new ArrayList<>();
+        lives = new ArrayList<>();
     
-    
-
-    public int getLives() {
-        return lives;
     }
-
-    public void setLives(int lives) {
-        this.lives = lives;
-    }
-
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
-    }
-    
+ 
     public String getName() {
         return name;
     }
@@ -46,12 +35,38 @@ public class Player implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
+
+    public List<Item> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public List<Game> getLives() {
+        return lives;
+    }
+
+    public void setLives(List<Game> lives) {
+        this.lives = lives;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.name);
+        hash = 47 * hash + Objects.hashCode(this.name);
+        hash = 47 * hash + Objects.hashCode(this.inventory);
+        hash = 47 * hash + Objects.hashCode(this.location);
+        hash = 47 * hash + Objects.hashCode(this.lives);
         return hash;
     }
 
@@ -70,12 +85,22 @@ public class Player implements Serializable {
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
+        if (!Objects.equals(this.inventory, other.inventory)) {
+            return false;
+        }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.lives, other.lives)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", lives=" + lives + ", inventory=" + inventory + '}';
+        return "Player{" + "name=" + name + ", inventory=" + inventory + ", location=" + location + ", lives=" + lives + '}';
     }
+    
     
 }

@@ -5,83 +5,53 @@
  */
 package byui.cit260.desertescape.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Dallin Barlow
  */
-public class Item {
-    
-    private Location location;
-    private String description;
-    private char Item;
+public class Item implements Serializable {
 
+    private String name;
+    private double amountAttained;
+    private double counts;
+    private double moneyworth;
+    
     public Item() {
     }
-    
-    
 
-    public Location getLocation() {
-        return location;
+    public String getName() {
+        return name;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public double getAmountAttained() {
+        return amountAttained;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAmountAttained(double amountAttained) {
+        this.amountAttained = amountAttained;
     }
 
-    public char getItem() {
-        return Item;
+    public double getCounts() {
+        return counts;
     }
 
-    public void setItem(char Item) {
-        this.Item = Item;
+    public void setCounts(double counts) {
+        this.counts = counts;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.location);
-        hash = 79 * hash + Objects.hashCode(this.description);
-        hash = 79 * hash + this.Item;
-        return hash;
+    public double getMoneyworth() {
+        return moneyworth;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Item other = (Item) obj;
-        if (this.Item != other.Item) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.location, other.location)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" + "location=" + location + ", description=" + description + ", Item=" + Item + '}';
+    public void setMoneyworth(double moneyworth) {
+        this.moneyworth = moneyworth;
     }
     
     

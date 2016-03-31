@@ -8,6 +8,8 @@ package desertescape;
 import byui.cit260.desertescape.model.Game;
 import byui.cit260.desertescape.model.Player;
 import byui.cit260.desertescape.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 /********************************
  * 
@@ -37,6 +39,11 @@ public class DesertEscape {
     private static Player player;
     private static Game game;
     
+    private static PrintWriter outFiles;
+    private static BufferedReader inFiles;
+    
+    private static PrintWriter logFiles;
+    
 
     /**
      * @param args the command line arguments
@@ -64,5 +71,31 @@ public class DesertEscape {
     public static void setGame(Game game) {
         DesertEscape.game = game;
     }
+
+    public static PrintWriter getOutFiles() {
+        return outFiles;
+    }
+
+    public static void setOutFiles(PrintWriter outFiles) {
+        DesertEscape.outFiles = outFiles;
+    }
+
+    public static BufferedReader getInFiles() {
+        return inFiles;
+    }
+
+    public static void setInFiles(BufferedReader inFiles) {
+        DesertEscape.inFiles = inFiles;
+    }
+
+    public static PrintWriter getLogFiles() {
+        return logFiles;
+    }
+
+    public static void setLogFiles(PrintWriter logFiles) {
+        DesertEscape.logFiles = logFiles;
+    }
+    
+    
     
 }
