@@ -10,7 +10,10 @@ package byui.cit260.desertescape.model;
  * @author Justin Golledge
  */
 public enum LocationType {
-    base,
-    desert,
-    mountain
+    Base,
+    Desert,
+    Shop,
+    AlienCamp,
+    Mountain,
+    Pyramaid;  
 }

@@ -10,14 +10,8 @@ package byui.cit260.desertescape.control;
  * @author Dallin Barlow
  */
 public class ActionsController {
-    public double jetpackCalculator(double distance, double gravity){
+    
+    public double calcVolumePyramid(double height, double lenght, double width){
         
-        if (distance <= 0 || gravity <= 0){
-            return -1;
-        }
-        
-        double velocity = distance * gravity;
-        
-        return velocity;
     }
 }

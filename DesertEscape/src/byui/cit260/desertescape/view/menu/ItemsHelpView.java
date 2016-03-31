@@ -66,25 +66,6 @@ public class ItemsHelpView extends View {
         }
         return false;
     }
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid){
-            System.out.println("Please select an option:  ");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if (input == null || input.length() == 0) {
-                System.out.println("Invalid input please input a correct character");
-            } 
-            else {
-                isValid = true;
-            }
-        }
-        return input.toUpperCase();
-    }
     
     private void mAp(String out) {
         out =   "                             MAP                            "

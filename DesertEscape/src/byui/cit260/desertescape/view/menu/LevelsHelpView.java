@@ -31,8 +31,8 @@ public class LevelsHelpView extends View {
                 +"\nL - Cliffs"
                 +"\nH - Shop"
                 +"\nM - Mountain"
-                +"\nR - Return to Help Menu"
-                +"                      OVERVIEW"
+                +"\nR - Return to Help Menu";
+                "                      OVERVIEW"
                 +"\nEach level of the game is different from the items that the"
                 +"\nplayer can obtain to the level's danger."
                 +"\n"
@@ -204,9 +204,10 @@ public class LevelsHelpView extends View {
     
     public boolean doAction(String value) {
         char input=value.charAt(0);
+        String out = "";
         switch (input) {
             case 'I':
-                insPect();
+                insPect(out);
                 break;
             case 'A':
                 completeAction();
@@ -241,8 +242,38 @@ public class LevelsHelpView extends View {
         return false;
     }
 
-    private void insPect() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void insPect(String out) {
+        out = "                      OVERVIEW"
+                +"\nEach level of the game is different from the items that the"
+                +"\nplayer can obtain to the level's danger."
+                +"\n"
+                +"\nITEMS: Low Level Items are obtained from inspecting the area"
+                +"\nwithout any other items. Medium Level Items are obtained when"
+                +"\nthey are found inspecting the are with other items. High Level"
+                +"\nItems are found when a level specific action is taken. These require"
+                +"\nother items almost always. If attempted without the necessary items"
+                +"\n the player will lose a life. When an item says + that is how much is"
+                +"\nobtained of that item, when an items says - that is how much is used"
+                +"\nof an item.|"
+                +"\n"
+                +"\nACTIONS: All levels but one have two basic actions: move and inspect."
+                +"\nSome levels have specific actions associated with only that level. Each"
+                +"\ntime an action is executed on the level, the danger calculator is ran."
+                +"\nLevel specific actions often require certain items to execute, if they"
+                +"\nare done without the item required the player will lose a life."
+                +"\n"
+                +"\nDANGER:The danger of the level is different depending on the level and"
+                +"\ndifficulty the player has selected. Each time the level menu appears a"
+                +"\ndanger calculator is ran. Example Desert on Medium is 1:20, so everytime"
+                +"\nthe menu for Desert on medium appears after an action (inspect, or a move)"
+                +"\nthe calculator is ran. Certain items in the game add to the player's chances."
+                +"\nA laser gun can add + 7 turning the odds to be 1 in 27 rather than only 20."
+                +"\nSo if a the player arrives at desert, the danger calculator will run once,"
+                +"\nif the player inspects, it will run again, until the player leaves the level."
+                +"\nOnly two levels don't have a danger factor. The player's first time on each level will "
+                +"\nalways be 1/30 regardless of difficulty setting.|";
+        
+        System.out.print(out);
     }
 
     private void moveNorth() {
