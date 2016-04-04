@@ -5,13 +5,85 @@
  */
 package byui.cit260.desertescape.control;
 
+import byui.cit260.desertescape.model.Game;
+import byui.cit260.desertescape.model.Item;
+import byui.cit260.desertescape.model.Location;
+import byui.cit260.desertescape.model.LocationType;
+import byui.cit260.desertescape.model.Player;
+
 /**
  *
  * @author Dallin Barlow
  */
 public class ActionsController {
     
-    public double calcVolumePyramid(double height, double lenght, double width){
+    public void getLocation(Game game){
+        // gets the player's location by the location type
+        Player player  = game.getPlayer();
+        Location currentLocation = player.getLocation();
+        LocationType type = currentLocation.getType();
+        
+        // converts the type to a value using ordinal
+        int local = type.ordinal();
+        
+        // inputs the local number into the inspect function to find out which item to get
+        inspect(local);
+        
+        // inputs the local number to get
+        //BASE
+        if (local == 0){
+            BuildTimeMachine();
+            
+        }
+        //Mountain
+        else if(local == 4){
+            chopDownTree();
+        }
+        //SHOP
+        else if(local == 2){
+            shop();
+        }
+        //Alien Camp
+        else if(local == 3){
+          solveAlienPuzzle();  
+        }
+        //Desert
+        else{
+            desert();
+        }
         
     }
+    
+    public void getInventory (Player in){
+        
+    }
+    
+    public String inspect(int local){
+        
+    }
+    
+    
+    public int BuildTimeMachine(){
+        
+    }
+    
+    public int shop(){
+        
+    }
+
+    private void chopDownTree() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void solveAlienPuzzle() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void desert() {
+        String out = "\nThere are no actions to complete on this level"
+                +"\n other than inspect.";
+        
+        System.out.println(out);
+    }
+ 
 }
