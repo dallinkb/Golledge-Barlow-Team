@@ -11,7 +11,7 @@ import java.util.Objects;
 /**
  *
  * @author Justin Golledge
- **/
+ */
 public class Location implements Serializable {
     
     private Action action;
@@ -21,14 +21,6 @@ public class Location implements Serializable {
     private int col;
 
     public Location() {
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Action getAction() {
