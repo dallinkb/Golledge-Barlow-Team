@@ -44,8 +44,10 @@ public class ProgramController {
     }
     
     // gets and sets lives for the game
-    public static double liVes(char input){
-        double life = 0;
+    public static void liVes(char input){
+        Player p = DesertEscape.getGame().getPlayer();
+        
+        int life = 0;
         switch (input) {
             case 'H':
                 life = 3;
@@ -62,21 +64,22 @@ public class ProgramController {
                 life = 6;
                 break;
         }
-        return life;
+        createInventorylist(life);
+        createNewGame(p, life);
     }
     
      
     
     
     // creates new game
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player, int life) {
         
          Game g = new Game();
         
          g.setPlayer(player); // saves player in game
          
          // create the inventoryList and saves it to the game
-         Inventory[] inventoryList = ProgramController.createInventorylist();
+         Inventory[] inventoryList = ProgramController.createInventorylist(life);
          g.setItems(inventoryList);
         
         Map gameMap = new Map();
@@ -89,10 +92,7 @@ public class ProgramController {
         
      }
     
-     public static Inventory[] createInventorylist(){
-         
-         double life = 6;
-         life = DesertEscape.getPlayer().getLives();
+     public static Inventory[] createInventorylist(int life){
          
          Inventory[] inventoryList = new Inventory[8];
          
@@ -194,11 +194,22 @@ public class ProgramController {
          itemList.add(necklace);
          
          Item artifact = new Item();
-         artifact.setName("Royal Necklace");
+         artifact.setName("Alien Artifact");
          artifact.setAmountAdded(1);
          artifact.setWorth(150);
          itemList.add(artifact);
          
+         Item lives = new Item();
+         lives.setName("Life");
+         lives.setAmountAdded(0);
+         lives.setWorth(1);
+         itemList.add(lives);
+         
+         Item schematic = new Item();
+         schematic.setName("Time Machine Schematic");
+         schematic.setAmountAdded(1);
+         schematic.setWorth(1000);
+         itemList.add(schematic);
         
          
         return itemList; 

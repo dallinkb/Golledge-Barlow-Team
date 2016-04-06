@@ -5,7 +5,13 @@
  */
 package byui.cit260.desertescape.view.actions;
 
+import byui.cit260.desertescape.control.ActionsController;
+import byui.cit260.desertescape.model.Inventory;
+import byui.cit260.desertescape.model.Item;
 import byui.cit260.desertescape.view.View;
+import byui.cit260.desertescape.view.menu.GameMenuView;
+import desertescape.DesertEscape;
+import java.util.List;
 
 /**
  *
@@ -25,70 +31,37 @@ public class ShopView extends View {
             + "\nD - -1  Diamond (+50 Money)"
             + "\nA - -1  Alien Artifact (+150 Money)"
             + "\nN - -1 Royal Necklace (+200)"
-            + "\nQ = Exit Game");
+            + "\nQ = Game Menu");
     }
     
     
     @Override
     public boolean doAction(String value){
         char input=value.charAt(0);
-        
-        switch (input) {
-            case 'F': // 
-                food();
-                break;
-            case 'B': 
-                boots();
-                break;
-            case 'S': 
-                schemati();
-                break;
-            case 'A': 
-                alienartifact();
-                break;
-            case 'R': 
-                ruby();
-                break;
-            case 'D': 
-                diamond();
-                break;
-            case 'N': 
-                necklace();
-                break;
+        if( input == 'Q' ){
+            gamemenuView();
+        }
+        else if(input == 'F' || input == 'B' || input == 'S' || input == 'R' || input == 'D' || input == 'A' || input == 'N'){
+            shOp(input);
+        }
             case 'Q': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
-        return false;
+
+    private void gamemenuView() {
+        GameMenuView g = new GameMenuView();
+        g.display();
     }
 
-    private void food() {
-       
+    private void shOp(char input) {
+        Inventory[] inventory = DesertEscape.getGame().getItems();
+        List<Item> item = DesertEscape.getGame().getPlayer().getItems();
+        ActionsController.shOp(inventory, item, input);
+  
     }
 
-    private void boots() {
-        
-    }
-
-    private void schemati() {
-        
-    }
-
-    private void alienartifact() {
-        
-    }
-
-    private void ruby() {
-        
-    }
-
-    private void diamond() {
-        
-    }
-
-    private void necklace() {
-        
-    }
+   
     
 }

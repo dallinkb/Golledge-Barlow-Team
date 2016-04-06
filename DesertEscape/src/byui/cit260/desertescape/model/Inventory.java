@@ -16,7 +16,7 @@ public class Inventory implements Serializable {
     
     private String description;
     private Item itemType;
-    private double amountInStock;
+    private int amountInStock;
 
     public String getDescription() {
         return description;
@@ -30,15 +30,11 @@ public class Inventory implements Serializable {
         return itemType;
     }
 
-    public void setItemType(Item itemType) {
-        this.itemType = itemType;
-    }
-
-    public double getAmountInStock() {
+    public int getAmountInStock() {
         return amountInStock;
     }
 
-    public void setAmountInStock(double amountInStock) {
+    public void setAmountInStock(int amountInStock) {
         this.amountInStock = amountInStock;
     }
     
