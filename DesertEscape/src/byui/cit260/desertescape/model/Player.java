@@ -20,7 +20,8 @@ public class Player implements Serializable {
     private String name;
     
     Location location;
-    private int lives;
+    private double lives;
+    private List<Item> items;
 
     public Player() {
     
@@ -42,13 +43,20 @@ public class Player implements Serializable {
         this.location = location;
     }
 
-    public List<Game> getLives() {
+    public double getLives() {
         return lives;
     }
 
-    public void setLives(List<Game> lives) {
+    public void setLives(double lives) {
         this.lives = lives;
     }
-    
-    
+
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }   
 }

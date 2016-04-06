@@ -11,7 +11,9 @@ import byui.cit260.desertescape.model.Game;
 import byui.cit260.desertescape.model.Inventory;
 import byui.cit260.desertescape.model.Item;
 import byui.cit260.desertescape.model.Location;
+import byui.cit260.desertescape.model.LocationType;
 import byui.cit260.desertescape.view.View;
+import byui.cit260.desertescape.view.actions.ShopView;
 import desertescape.DesertEscape;
 import java.io.Console;
 import java.util.Scanner;
@@ -126,7 +128,12 @@ public class GameMenuView extends View {
     }
 
     private void completeAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationType type = DesertEscape.getGame().getPlayer().getLocation().getType();
+        if(type == LocationType.shop){
+            ShopView view = new ShopView();
+            view.display();
+        }
+        
     }
 
     private void viewCurrentLocation() {

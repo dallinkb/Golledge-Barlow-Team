@@ -29,6 +29,9 @@ public class ProgramController {
      * @param playerName
      * @return
      */
+    
+    
+    //creates new player
     public static Player createPlayer(String playerName) {
         
         if (playerName == null){
@@ -40,7 +43,33 @@ public class ProgramController {
         return p;
     }
     
-     public static void createNewGame(Player player) {
+    // gets and sets lives for the game
+    public static double liVes(char input){
+        double life = 0;
+        switch (input) {
+            case 'H':
+                life = 3;
+                break;
+            case 'M':
+                life = 6;
+                break;
+            case 'E':
+                life = 9;
+                break;
+            case 'Q':
+                break;
+            default:
+                life = 6;
+                break;
+        }
+        return life;
+    }
+    
+     
+    
+    
+    // creates new game
+    public static void createNewGame(Player player) {
         
          Game g = new Game();
         
@@ -62,8 +91,10 @@ public class ProgramController {
     
      public static Inventory[] createInventorylist(){
          
+         double life = 6;
+         life = DesertEscape.getPlayer().getLives();
          
-         Inventory[] inventoryList = new Inventory[7];
+         Inventory[] inventoryList = new Inventory[8];
          
          
          
@@ -101,6 +132,11 @@ public class ProgramController {
          artifact.setDescription("Alien Artifact");
          artifact.setAmountInStock(0);
          inventoryList[6]= artifact;
+         
+         Inventory lives = new Inventory();
+         lives.setDescription("Lives");
+         lives.setAmountInStock(life);
+         inventoryList[7] = lives;
          
          return inventoryList;
      }

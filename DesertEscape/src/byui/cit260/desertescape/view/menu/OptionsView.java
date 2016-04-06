@@ -5,8 +5,11 @@
  */
 package byui.cit260.desertescape.view.menu;
 
+import byui.cit260.desertescape.control.ProgramController;
+import byui.cit260.desertescape.model.Player;
 import byui.cit260.desertescape.view.View;
 import byui.cit260.desertescape.view.menu.MainMenuView;
+import desertescape.DesertEscape;
 import java.util.Scanner;
 
 /**
@@ -32,13 +35,13 @@ public class OptionsView extends View {
         String out = "";
         switch (input){
             case 'H':
-                hArd(out);
+                hArd(input);
                 break;
             case 'M':
-                medIum(out);
+                medIum(input);
                 break;
             case 'E':
-                eaSy(out);
+                eaSy(input);
                 break;
             case 'Q':
                 break;
@@ -49,29 +52,41 @@ public class OptionsView extends View {
         return false;
     }
 
-    private void hArd(String out) {
-        out =   "\n You have selected HARD difficulty setting,"
+    private void hArd(char input) {
+        String out =   "\n You have selected HARD difficulty setting,"
                 + "\nthis will give you 3 lives for the game.";
-        
         System.out.println(out);
+        
+        double lives = ProgramController.liVes(input);
+        DesertEscape.getPlayer().setLives(lives);
+        
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
     }
 
-    private void medIum(String out) {
-        out =   "\n You have selected MEDIUM difficulty setting,"
+    private void medIum(char input) {
+        String out =   "\n You have selected MEDIUM difficulty setting,"
                 + "\nthis will give you 6 lives for the game.";
-        
         System.out.println(out);
+        
+        double lives = ProgramController.liVes(input);
+        DesertEscape.getPlayer().setLives(lives);
+        
+        
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
     }
 
-    private void eaSy(String out) {
-         out =  "\n You have selected EASY difficulty setting,"
+    private void eaSy(char input) {
+         String out =  "\n You have selected EASY difficulty setting,"
                 + "\nthis will give you 9 lives for the game";
-       
         System.out.println(out);
+        
+        double lives = ProgramController.liVes(input);
+        DesertEscape.getPlayer().setLives(lives);
+        
+        
+        
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
     }

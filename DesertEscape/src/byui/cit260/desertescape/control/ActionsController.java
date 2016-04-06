@@ -6,10 +6,13 @@
 package byui.cit260.desertescape.control;
 
 import byui.cit260.desertescape.model.Game;
+import byui.cit260.desertescape.model.Inventory;
 import byui.cit260.desertescape.model.Item;
 import byui.cit260.desertescape.model.Location;
 import byui.cit260.desertescape.model.LocationType;
 import byui.cit260.desertescape.model.Player;
+import desertescape.DesertEscape;
+import java.util.List;
 
 /**
  *
@@ -36,40 +39,36 @@ public class ActionsController {
             BuildTimeMachine();
             
         }
-        //Mountain
-        else if(local == 4){
-            chopDownTree();
-        }
         //SHOP
         else if(local == 2){
             shop();
         }
         //Alien Camp
-        else if(local == 3){
+        else if(local == 5){
           solveAlienPuzzle();  
         }
-        //Desert
+        
+        
+        //Desert, alien campsite
         else{
-            desert();
+            error();
         }
         
     }
     
     //gets the players inventory to add or take away from it and pass it on
-    public void getInventory (Game Inventory[]){
-        
+    public void getInventory (Game game){
+        Inventory[] items = game.getItems();
+        items.getClass();
         
     }
     
-    public String inspect(int local){
-        String a = "";
-        String b = "";
-        boolean shop = false;
+    public static inspect(int local){
+        List<Item> items = DesertEscape.getGame().getPlayer().getItems();
+        Inventory item : items = item.getAmountInStock();
         
         if (local != 3){
-          
             
-            shop = true;
         }
         
         
@@ -77,13 +76,20 @@ public class ActionsController {
     
     
     public int BuildTimeMachine(){
+        Inventory item = new Inventory();
+        item.getAmountInStock(food);
+        
+        inventoryList.get(item.get)
+
+
+//Game game = DesertEscape.getGame();
+        // Inventory[] item = game.getItems();
+        
+        
+       
         
     }
     
-    public shop(){
-        
-    }
-
     private void chopDownTree() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -92,11 +98,17 @@ public class ActionsController {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void desert() {
+    private void error() {
         String out = "\nThere are no actions to complete on this level"
                 +"\n other than inspect.";
         
         System.out.println(out);
+    }
+    
+        
+    
+    public static shOp(){
+        
     }
  
 }

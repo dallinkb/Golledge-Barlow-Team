@@ -34,24 +34,61 @@ public class ShopView extends View {
         char input=value.charAt(0);
         
         switch (input) {
-            case 'N': // Start a new game
-                startNewGame();
+            case 'F': // 
+                food();
                 break;
-            case 'R': // get and start an exiting game
-                loadSavedGame();
+            case 'B': 
+                boots();
                 break;
-            case 'O': // display the options menu
-                displayOptionsMenu();
+            case 'S': 
+                schemati();
                 break;
-            case 'H': // help menu
-                displayHelpMenu();
+            case 'A': 
+                alienartifact();
                 break;
-            case 'Q': // exit Menu
+            case 'R': 
+                ruby();
+                break;
+            case 'D': 
+                diamond();
+                break;
+            case 'N': 
+                necklace();
+                break;
+            case 'Q': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
         }
         return false;
+    }
+
+    private void food() {
+       
+    }
+
+    private void boots() {
+        
+    }
+
+    private void schemati() {
+        
+    }
+
+    private void alienartifact() {
+        
+    }
+
+    private void ruby() {
+        
+    }
+
+    private void diamond() {
+        
+    }
+
+    private void necklace() {
+        
     }
     
 }
