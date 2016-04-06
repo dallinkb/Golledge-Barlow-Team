@@ -20,10 +20,9 @@ public class Player implements Serializable {
     private String name;
     
     Location location;
-    List<Game> lives;
+    private int lives;
 
     public Player() {
-        lives = new ArrayList<>();
     
     }
  
@@ -49,48 +48,6 @@ public class Player implements Serializable {
 
     public void setLives(List<Game> lives) {
         this.lives = lives;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.name);
-        hash = 47 * hash + Objects.hashCode(this.inventory);
-        hash = 47 * hash + Objects.hashCode(this.location);
-        hash = 47 * hash + Objects.hashCode(this.lives);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Player other = (Player) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.inventory, other.inventory)) {
-            return false;
-        }
-        if (!Objects.equals(this.location, other.location)) {
-            return false;
-        }
-        if (!Objects.equals(this.lives, other.lives)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", inventory=" + inventory + ", location=" + location + ", lives=" + lives + '}';
     }
     
     

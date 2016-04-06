@@ -79,7 +79,7 @@ public class StartProgramView {
                 
         System.out.println("              Enjoy the game.                ");
         System.out.println("*********************************************");
-        "\n has just woken up. You don't know what happened, why it's so glum. Suddenly you hear an something bark something at you."
+            /* "\n has just woken up. You don't know what happened, why it's so glum. Suddenly you hear an something bark something at you."
                 + "\nYou turn to see an alien, he puts a collar on you and turns it on. Suddenly his barking becomes understandable,"
                 + "\nYou shouldn't be here, you need to get back to your group. He continues to put a chain on the collar and lead you away."
                 + "\n"
@@ -100,6 +100,6 @@ public class StartProgramView {
                 + "\nlabeled no one's land, you decide it to be safe so you go there and fall asleep. Then you wake up with the determination"
                 + "\nthat you have to save humanity from this terrible tragedy. You must find a way to get back to your time and tell the others about this."
                 + "\nC - Continue to Base and Start Game"
-                + "\nM - Return to Main Menu");
+                + "\nM - Return to Main Menu"); */
     }
 }

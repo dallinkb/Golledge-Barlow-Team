@@ -5,8 +5,15 @@
  */
 package byui.cit260.desertescape.view.menu;
 
+import byui.cit260.desertescape.control.MovementController;
+import byui.cit260.desertescape.control.ProgramController;
+import byui.cit260.desertescape.model.Game;
+import byui.cit260.desertescape.model.Inventory;
+import byui.cit260.desertescape.model.Item;
+import byui.cit260.desertescape.model.Location;
 import byui.cit260.desertescape.view.View;
 import desertescape.DesertEscape;
+import java.io.Console;
 import java.util.Scanner;
 
 /**
@@ -26,6 +33,7 @@ public class GameMenuView extends View {
                 +"\nW - Move West"
                 +"\nM - View Map"
                 +"\nV - View Inventory"
+                +"\nL - View  Current Location"
                 +"\nG - Save Game"
                 +"\nQ - Quit Game");
     } 
@@ -57,6 +65,9 @@ public class GameMenuView extends View {
             case 'V':
                 viewInventory();
                 break;
+            case 'L':
+                viewCurrentLocation();
+                break;
             case 'G':
                 saveGame();
                 break;
@@ -74,19 +85,31 @@ public class GameMenuView extends View {
     }
 
     private void moveNorth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        MovementController mc = new MovementController();
+        if(mc.moveEast(DesertEscape.getGame())== false){
+            System.out.println("You cannot move there");
+        }
     }
 
     private void moveSouth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        MovementController mc = new MovementController();
+        if(mc.moveEast(DesertEscape.getGame())== false){
+            System.out.println("You cannot move there");
+        }
     }
 
     private void moveEast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        MovementController mc = new MovementController();
+        if(mc.moveEast(DesertEscape.getGame())== false){
+            System.out.println("You cannot move there");
+        }
     }
 
     private void moveWest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        MovementController mc = new MovementController();
+        if(mc.moveEast(DesertEscape.getGame())== false){
+            System.out.println("You cannot move there");
+        }
     }
 
     private void viewMap() {
@@ -94,7 +117,8 @@ public class GameMenuView extends View {
     }
 
     private void viewInventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ProgramController output = new ProgramController();
+        output.printInventorylist();
     }
 
     private void saveGame() {
@@ -103,6 +127,11 @@ public class GameMenuView extends View {
 
     private void completeAction() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void viewCurrentLocation() {
+        Location l = DesertEscape.getGame().getPlayer().getLocation();
+        System.out.println("You are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
 

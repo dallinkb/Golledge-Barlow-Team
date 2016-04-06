@@ -17,6 +17,7 @@ import byui.cit260.desertescape.model.Player;
  */
 public class ActionsController {
     
+    //Gets the player's locationn to determine what functions it should run
     public void getLocation(Game game){
         // gets the player's location by the location type
         Player player  = game.getPlayer();
@@ -54,11 +55,23 @@ public class ActionsController {
         
     }
     
-    public void getInventory (Player in){
+    //gets the players inventory to add or take away from it and pass it on
+    public void getInventory (Game Inventory[]){
+        
         
     }
     
     public String inspect(int local){
+        String a = "";
+        String b = "";
+        boolean shop = false;
+        
+        if (local != 3){
+          
+            
+            shop = true;
+        }
+        
         
     }
     
@@ -67,7 +80,7 @@ public class ActionsController {
         
     }
     
-    public int shop(){
+    public shop(){
         
     }
 

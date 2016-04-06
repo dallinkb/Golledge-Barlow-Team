@@ -6,6 +6,7 @@
 package byui.cit260.desertescape.view;
 
 import java.util.Scanner;
+import desertescape.DesertEscape;
 
 /**
  *
@@ -35,6 +36,7 @@ public abstract class View implements ViewInterface{
             done=this.doAction(value);
         }while(!done);
     }
+    
     @Override
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -42,7 +44,7 @@ public abstract class View implements ViewInterface{
         boolean isValid = false;
         
         while(!isValid) {
-            System.out.println("Please select an option:  ");
+            System.out.println(this.displayMessage);
             input = keyboard.nextLine();
             input = input.trim();
             
