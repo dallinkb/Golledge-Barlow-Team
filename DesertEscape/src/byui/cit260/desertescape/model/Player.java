@@ -18,12 +18,11 @@ import java.util.logging.Logger;
 public class Player implements Serializable {
     
     private String name;
-    List<Item> inventory;
+    
     Location location;
     List<Game> lives;
 
     public Player() {
-        inventory = new ArrayList<>();
         lives = new ArrayList<>();
     
     }
@@ -34,14 +33,6 @@ public class Player implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Item> getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(List<Item> inventory) {
-        this.inventory = inventory;
     }
 
     public Location getLocation() {

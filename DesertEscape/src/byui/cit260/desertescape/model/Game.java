@@ -15,8 +15,17 @@ public class Game {
     
     private Player player;
     private Map map;
+    private Inventory[] items;
 
     public Game() {
+    }
+
+    public Inventory[] getItems() {
+        return items;
+    }
+
+    public void setItems(Inventory[] items) {
+        this.items = items;
     }
     
     public Player getPlayer() {

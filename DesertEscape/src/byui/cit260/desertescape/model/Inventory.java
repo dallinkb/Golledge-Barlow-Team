@@ -5,13 +5,41 @@
  */
 package byui.cit260.desertescape.model;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
  *
  * @author Dallin Barlow
  */
-public class Inventory {
+public class Inventory implements Serializable {
     
-    private Item items;
-    private Location location;
-    private list
+    private String description;
+    private Item itemType;
+    private double amountInStock;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public Item getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(Item itemType) {
+        this.itemType = itemType;
+    }
+
+    public double getAmountInStock() {
+        return amountInStock;
+    }
+
+    public void setAmountInStock(double amountInStock) {
+        this.amountInStock = amountInStock;
+    }
+    
 }

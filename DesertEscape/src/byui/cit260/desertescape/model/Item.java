@@ -12,47 +12,14 @@ import java.util.Objects;
  *
  * @author Dallin Barlow
  */
-public class Item implements Serializable {
-
-    private String name;
-    private double amountAttained;
-    private double counts;
-    private double moneyworth;
+public enum Item implements Serializable {
     
-    public Item() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getAmountAttained() {
-        return amountAttained;
-    }
-
-    public void setAmountAttained(double amountAttained) {
-        this.amountAttained = amountAttained;
-    }
-
-    public double getCounts() {
-        return counts;
-    }
-
-    public void setCounts(double counts) {
-        this.counts = counts;
-    }
-
-    public double getMoneyworth() {
-        return moneyworth;
-    }
-
-    public void setMoneyworth(double moneyworth) {
-        this.moneyworth = moneyworth;
-    }
-    
-    
+    food,
+    boots,
+    schematic,
+    money,
+    ruby,
+    necklace,
+    diamond,
+    artifact;
 }

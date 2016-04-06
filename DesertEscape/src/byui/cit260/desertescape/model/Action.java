@@ -5,19 +5,18 @@
  */
 package byui.cit260.desertescape.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Dallin Barlow
  */
-public class Action {
+public enum Action implements Serializable{
     
-    private Item item;
-    private Location location;
-    private String Name;
-
-    public Action() {
-    }
-    
+    buildTimeMachine,
+    calcPyramidVolume,
+    chopDownTree,
+    shOp,
+    solvePuzzle;
 }

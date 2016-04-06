@@ -5,11 +5,14 @@
  */
 package byui.cit260.desertescape.control;
 
+import byui.cit260.desertescape.model.Action;
 import byui.cit260.desertescape.model.Game;
+import byui.cit260.desertescape.model.Inventory;
 import byui.cit260.desertescape.model.Item;
 import byui.cit260.desertescape.model.Location;
 import byui.cit260.desertescape.model.Map;
 import byui.cit260.desertescape.model.Player;
+import com.sun.corba.se.impl.orbutil.closure.Constant;
 import desertescape.DesertEscape;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +42,12 @@ public class ProgramController {
      public static void createNewGame(Player player) {
         
          Game g = new Game();
-        g.setPlayer(player);
+        
+         g.setPlayer(player); // saves player in game
+         
+         // create the inventoryList and saves it to the game
+         Inventory[] inventoryList = ProgramController.createInventorylist();
+         g.setItems(inventoryList);
         
          Map gameMap = new Map();
         g.setMap(gameMap);
@@ -49,60 +57,46 @@ public class ProgramController {
         DesertEscape.setGame(g);
      }
     
-     public static List<Item> createItemList(){
-         List<Item> itemList = new ArrayList<>();
+     public static Inventory[] createInventorylist(){
          
-         Item money = new Item();
-         money.setName("Money");
-         money.setAmountAttained(10);
-         money.setCounts(1);
-         money.setMoneyworth(1);
+         Inventory[] items = new Inventory[7];
          
-         Item boots = new Item();
-         boots.setName("Boots");
-         boots.setAmountAttained(10);
-         boots.setCounts(1);
-         boots.setMoneyworth(40);
+         Inventory boots = new Inventory();
+         boots.setDescription("Boots");
+         boots.setAmountInStock(15);
+         items[Item.boots.ordinal()]= boots;
          
-         Item schematic = new Item();
-         schematic.setName("Time Machine Schematic");
-         schematic.setAmountAttained(1);
-         schematic.setCounts(1);
-         schematic.setMoneyworth(1000);
+         Inventory money = new Inventory();
+         money.setDescription("Money");
+         money.setAmountInStock(0);
+         items[Item.money.ordinal()]= money;
          
-         Item ruby = new Item();
-         ruby.setName("Ruby");
-         ruby.setAmountAttained(1);
-         ruby.setCounts(1);
-         ruby.setMoneyworth(50);
+         Inventory schematic = new Inventory();
+         schematic.setDescription("Time Machine Schematic");
+         schematic.setAmountInStock(0);
+         items[Item.schematic.ordinal()]= schematic;
          
-         Item diamond = new Item();
-         diamond.setName("Diamond");
-         diamond.setAmountAttained(1);
-         diamond.setCounts(1);
-         diamond.setMoneyworth(75);
+         Inventory ruby = new Inventory();
+         ruby.setDescription("Ruby");
+         ruby.setAmountInStock(0);
+         items[Item.ruby.ordinal()]= ruby;
          
-         Item necklace = new Item();
-         necklace.setName("Royal Necklace");
-         necklace.setAmountAttained(1);
-         necklace.setCounts(1);
-         necklace.setMoneyworth(200);
+         Inventory diamond = new Inventory();
+         diamond.setDescription("Diamond");
+         diamond.setAmountInStock(0);
+         items[Item.diamond.ordinal()]= diamond;
          
-         Item artifact = new Item();
-         artifact.setName("Alien Artifact");
-         artifact.setAmountAttained(1);
-         artifact.setCounts(1);
-         artifact.setMoneyworth(125);
+         Inventory necklace = new Inventory();
+         necklace.setDescription("Royal Necklace");
+         necklace.setAmountInStock(0);
+         items[Item.necklace.ordinal()]= necklace;
          
-         Item food = new Item();
-         food.setName("Food");
-         food.setAmountAttained(5);
-         food.setCounts(1);
-         food.setMoneyworth(15);
+         Inventory artifact = new Inventory();
+         artifact.setDescription("Alien Artifact");
+         artifact.setAmountInStock(0);
+         items[Item.artifact.ordinal()]= artifact;
          
-         return itemList;
-     }
-     
-    public static List<Location>
+         return items;
+     } 
 }
 
