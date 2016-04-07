@@ -25,13 +25,10 @@ public class LevelsHelpView extends View {
                 +"\nB - Base"
                 +"\nD - Desert"
                 +"\nP - Pyramid"
-                +"\nS - Slave Camps"
-                +"\nC - Caves"
                 +"\nA - Alien Camp"
-                +"\nL - Cliffs"
                 +"\nH - Shop"
                 +"\nM - Mountain"
-                +"\nR - Return to Help Menu";
+                +"\nQ - Return to Help Menu");
 
     }
    
@@ -49,23 +46,11 @@ public class LevelsHelpView extends View {
             case 'P':
                 pyraMid(out);
                 break;
-            case 'S':
-                slaveCamps(out);
-                break;
-            case 'C':
-                caVes(out);
-                break;
             case 'A':
                 alienCamp(out);
                 break;
-            case 'L':
-                cliFfs(out);
-                break;
             case 'H':
                 shOp(out);
-                break;
-            case 'M':
-                mouNtain(out)
                 break;
             case 'Q':
                 break;
@@ -162,48 +147,6 @@ public class LevelsHelpView extends View {
             System.out.print(out);
     }
 
-    private void slaveCamps(String out) {
-        out = "                                    SLAVE CAMP"
-                +"\nLow Level Items:+1 Cloth;+1 Shovel;+1 Ax  |  Danger Easy:1/12"
-                +"\nMedium Level Items:none                   |  Danger Medium:1/7"
-                +"\nHigh Level Items:+1 Code Breaker          |  Danger Hard:1/3"
-                +"\nItems Needed Medium:none                  |  Items Needed High:1 Slave Robe" 
-                +"\nDescription:The dangerous fifth level, recommend obtaining protection to approach this level."
-                +"\nIt does have items that are needed for later on in the game."
-                +"\nACTIONS:Run-Moving Forward is Alien Camp, Moving Backward is Caves"
-                +"\nMoving forward/backward will -1 food, -1 Boot count(see items help menu)"
-                +"\nand run Danger calculator according to the level that the player is moving to.|"
-                +"\nInspect-Searches the area for items, list of items will change depending on"
-                +"\nthe items that the player already has WITH him/her. Runs the Danger Calculator.|"
-                +"\nPause-Allows the player to see inventory, Save Game, View Inventory/Stats, exit "
-                +"\nto the games main menu, and view the help menu. Will NOT run the Danger Calculator."
-                +"\nTalk to Slaves-The player will do this to obtain a code breaker. Requires a slave robe,"
-                +"\nif player attempts action without required items, they will lose a life. Runs the Danger Calculator|";
-                
-            System.out.print(out);
-    }
-
-    private void cliFfs(String out) {
-        out = "                                     CLIFFS"
-                +"\nLow Level Items:+10 Units;+5 Food            |  Danger Easy:1/20"
-                +"\nMedium Level Items+10 Metal                  |  Danger Medium:1/15"
-                +"\nHigh Level Items:none                        |  Danger Hard:1/10"
-                +"\nItems Needed Medium:1 Metal Detector,1 Pick  |  Items Needed High:1 Shovel" 
-                +"\nDescription:The seventh level of the game, to be able to move forward from"
-                +"\n this level the player must do the action fill in the pit, or they will lose a life.|"
-                +"\nACTIONS:Run-Moving Forward is Shop, Moving Backward is Alien Camp."
-                +"\nMoving forward/backward will -1 food, -1 Boot count(see items help menu)|"
-                +"\nand run Danger calculator according to the level that the player is moving to.|"
-                +"\nInspect-Searches the area for items, list of items will change depending on"
-                +"\nthe items that the player already has WITH him/her. Runs the Danger Calculator.|"
-                +"\nPause-Allows the player to see inventory, Save Game, View Inventory/Stats, exit "
-                +"\nto the games main menu, and view the help menu. Will NOT run the Danger Calculator.|"
-                +"\nFill in Pit: Must do this with the shovel. Must do this action to be able to move forward."
-                +"\n If the action is attempted without the required items the player will lose a life.| ";
-                
-            System.out.print(out);
-    }
-
     private void alienCamp(String out) {
         out = "                                                ALIEN CAMP"
                 +"\nLow Level Items:+30 money                  |  Danger Easy:1/10"
@@ -227,25 +170,6 @@ public class LevelsHelpView extends View {
                 +"\nTake a Photo- allows the player to snap a photo of the aliens. Must do this"
                 +"\nin order to win the game. If the player attempts action without required items, they"
                 +"\nwill lose a life.Runs the Danger Calculator.|";
-                
-            System.out.print(out);
-    }
-
-    private void caVes(String out) {
-        out = "                                               CAVES"
-                +"\nLow Level Items:+10 Money;+5 Food                                     |  Danger Easy:1/20"
-                +"\nMedium Level Items:+5 Silver;+1 Ruby;+1 Diamond                       |  Danger Medium:1/15"
-                +"\nHigh Level Items:none                                                 |  Danger Hard:1/10"
-                +"\nItems Needed Medium:1 Metal Detector,1 Flashlight;1 Pick,1 Flashlight |  Items Needed High:none" 
-                +"\nDescription:The fourth level of the game, no specific action is taken. But it is the only"
-                +"\nlevel that the player can obtain Silver.|"
-                +"\nACTIONS:Run-Moving Forward is , Moving Backward is "
-                +"\nMoving forward/backward will -1 food, -1 Boot count(see items help menu)"
-                +"\nand run Danger calculator according to the level that the player is moving to.|"
-                +"\nInspect-Searches the area for items, list of items will change depending on"
-                +"\nthe items that the player already has WITH him/her. Runs the Danger Calculator.|"
-                +"\nPause-Allows the player to see inventory, Save Game, View Inventory/Stats, exit "
-                +"\nto the games main menu, and view the help menu. Will NOT run the Danger Calculator.|";
                 
             System.out.print(out);
     }

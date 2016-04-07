@@ -43,11 +43,9 @@ public class ShopView extends View {
         }
         else if(input == 'F' || input == 'B' || input == 'S' || input == 'R' || input == 'D' || input == 'A' || input == 'N'){
             shOp(input);
-        }
-            case 'Q': 
-            default:
+        }else
                 System.out.println("\n*** Not valid ***  Please try again");
-                break;
+        return true;
         }
 
     private void gamemenuView() {

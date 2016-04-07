@@ -66,6 +66,7 @@ public class ProgramController {
         }
         createInventorylist(life);
         createNewGame(p, life);
+        DesertEscape.getPlayer().setLives(life);
     }
     
      
@@ -99,7 +100,7 @@ public class ProgramController {
          
          
          Inventory boots = new Inventory();
-         boots.setDescription("Food");
+         boots.setDescription("Boots");
          boots.setAmountInStock(15);
          inventoryList[0]= boots;
          
@@ -137,6 +138,11 @@ public class ProgramController {
          lives.setDescription("Lives");
          lives.setAmountInStock(life);
          inventoryList[7] = lives;
+         
+         Inventory food = new Inventory();
+         food.setDescription("Food");
+         food.setAmountInStock(life);
+         inventoryList[8] = food;
          
          return inventoryList;
      }

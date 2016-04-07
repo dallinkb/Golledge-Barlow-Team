@@ -55,6 +55,8 @@ public class MainMenuView extends View {
     
     
     private void startNewGame() {
+        
+        
         String out ="\n**************************************************************************************************************************"
                 + "\n_______________________________________________________New Game__________________________________________________________"
                 + "\n has just woken up. You don't know what happened, why it's so glum. Suddenly you hear an something bark something at you."
@@ -78,7 +80,7 @@ public class MainMenuView extends View {
                 + "\nlabeled no one's land, you decide it to be safe so you go there and fall asleep. Then you wake up with the determination"
                 + "\nthat you have to save humanity from this terrible tragedy. You must find a way to get back to your time and tell the others about this.";
        
-        ProgramController.createNewGame(DesertEscape.getPlayer());
+        ProgramController.createNewGame(DesertEscape.getPlayer(),DesertEscape.getPlayer().getLives());
         
         System.out.print(out);
         GameMenuView gameMenu = new GameMenuView();

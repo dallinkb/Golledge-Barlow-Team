@@ -12,6 +12,7 @@ import byui.cit260.desertescape.model.Location;
 import byui.cit260.desertescape.model.LocationType;
 import byui.cit260.desertescape.model.Player;
 import byui.cit260.desertescape.view.StartProgramView;
+import byui.cit260.desertescape.view.actions.ShopView;
 import byui.cit260.desertescape.view.menu.GameMenuView;
 import desertescape.DesertEscape;
 import java.util.List;
@@ -47,7 +48,8 @@ public class ActionsController {
 
         } //SHOP
         else if (type == (type.shop)) {
-            shOp(inventory, item);
+            ShopView view = new ShopView();
+            view.display();
         } //Alien Camp
         else if (type == (type.alienCamp)) {
             solveAlienPuzzle(inventory, item);
@@ -317,8 +319,8 @@ public class ActionsController {
     }
 
     public static void shOp(Inventory[] inventory, List<Item> item, char type) {
-        String output = "\n You do not have sufficient"+
-                 "\nitems to make that trade";
+        String output = "\n You do not have an sufficient"+
+                 "\namount of items to complete this transaction";
         int wallet = 0;
         int money = inventory[1].getAmountInStock();
 
@@ -330,8 +332,20 @@ public class ActionsController {
         int $necklace = item.get(5).getWorth();
         int $artifact = item.get(6).getWorth();
         int $schematic = item.get(8).getWorth();
+        
+        
+        int orginal = 0;
+        //all the amounts of the items you have;
+        int boot = inventory[0].getAmountInStock();
+        int foods = inventory[8].getAmountInStock();
+        int rubies = inventory[3].getAmountInStock(); 
+        int diamonds = inventory[4].getAmountInStock();
+        int schematics = inventory[2].getAmountInStock();
+        int necklaces= inventory[5].getAmountInStock();
+        int artifacts = inventory[6].getAmountInStock();
 
-        // all the values of how much you get for buying or selling
+
+        // all the amounts of how much you get for buying or selling
         int left = 0;
         int food = item.get(0).getAmountAdded();
         int boots = item.get(1).getAmountAdded();
@@ -341,20 +355,88 @@ public class ActionsController {
         int artifact = item.get(6).getAmountAdded();
         int schematic = item.get(8).getAmountAdded();
         
+        
+        // buying
         if (type == 'F'){
             if(money < $food){
                 System.out.println(output);
             }
             wallet = money - $food;
             inventory[1].setAmountInStock(wallet);
+            orginal = food + foods;
+            inventory[8].setAmountInStock(orginal);
+            
+            System.out.println("\n You just Spent " +$food+ " and gained " +food+ " food.");
         }
-
-               if(money < $food){
-
-                System.out.println("\n*** Not valid ***  Please try again");
-                break;
+        if (type == 'B'){
+            if(money < $boots){
+                System.out.println(output);
+            }
+            wallet = money - $boots;
+            inventory[1].setAmountInStock(wallet);
+            orginal = boot + boots;
+            inventory[0].setAmountInStock(orginal);
+            
+            System.out.println("\n You just Spent " +$boots+ " and gained " +boots+ " boots.");
         }
-
+        if (type == 'S'){
+            if(money < $schematic){
+                System.out.println(output);
+            }
+            wallet = money - $schematic;
+            inventory[1].setAmountInStock(wallet);
+            orginal = schematic + schematics;
+            inventory[2].setAmountInStock(orginal);
+            
+            System.out.println("\n You just Spent " +$schematic+ " and gained " +schematic+ " schematic.");
+        }
+        
+        
+        //View for selling things
+        if (type == 'R'){
+            if(rubies < ruby){
+                System.out.println(output);
+            }
+            wallet = money + $ruby;
+            inventory[1].setAmountInStock(wallet);
+            orginal = rubies - ruby;
+            inventory[3].setAmountInStock(orginal);
+            
+            System.out.println("\n You just Traded " +ruby+ " Ruby for" +$ruby+ " money.");
+        }
+        if (type == 'D'){
+            if(diamonds < diamond){
+                System.out.println(output);
+            }
+            wallet = money + $diamond;
+            inventory[1].setAmountInStock(wallet);
+            orginal = diamonds - diamond;
+            inventory[4].setAmountInStock(orginal);
+            
+            System.out.println("\n You just Traded " +diamond+ " Diamond for" +$diamond+ " money.");
+        }
+        if (type == 'N'){
+            if(necklaces < necklace){
+                System.out.println(output);
+            }
+            wallet = money + $necklace;
+            inventory[1].setAmountInStock(wallet);
+            orginal = necklaces - necklace;
+            inventory[5].setAmountInStock(orginal);
+            
+            System.out.println("\n You just Traded " +necklace+ " Necklace for" +$necklace+ " money.");
+        }
+        if (type == 'N'){
+            if(necklaces < necklace){
+                System.out.println(output);
+            }
+            wallet = money + $necklace;
+            inventory[1].setAmountInStock(wallet);
+            orginal = artifacts - artifact;
+            inventory[6].setAmountInStock(orginal);
+            
+            System.out.println("\n You just Traded " +artifact+ " Alien Artifact for" +$artifact+ " money.");
+        }
     }
 
     private static void error() {

@@ -57,8 +57,8 @@ public class OptionsView extends View {
                 + "\nthis will give you 3 lives for the game.";
         System.out.println(out);
         
-        double lives = ProgramController.liVes(input);
-        DesertEscape.getPlayer().setLives(lives);
+        ProgramController.liVes(input);
+
         
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
@@ -69,8 +69,8 @@ public class OptionsView extends View {
                 + "\nthis will give you 6 lives for the game.";
         System.out.println(out);
         
-        double lives = ProgramController.liVes(input);
-        DesertEscape.getPlayer().setLives(lives);
+        ProgramController.liVes(input);
+        
         
         
         MainMenuView mainMenuView = new MainMenuView();
@@ -82,8 +82,8 @@ public class OptionsView extends View {
                 + "\nthis will give you 9 lives for the game";
         System.out.println(out);
         
-        double lives = ProgramController.liVes(input);
-        DesertEscape.getPlayer().setLives(lives);
+        ProgramController.liVes(input);
+
         
         
         
