@@ -46,8 +46,8 @@ public class ProgramController {
     // gets and sets lives for the game
     public static void liVes(char input){
         Player p = DesertEscape.getGame().getPlayer();
+        int life = 6;
         
-        int life = 0;
         switch (input) {
             case 'H':
                 life = 3;
@@ -95,7 +95,7 @@ public class ProgramController {
     
      public static Inventory[] createInventorylist(int life){
          
-         Inventory[] inventoryList = new Inventory[8];
+         Inventory[] inventoryList = new Inventory[9];
          
          
          
@@ -106,7 +106,7 @@ public class ProgramController {
          
          Inventory money = new Inventory();
          money.setDescription("Money");
-         money.setAmountInStock(0);
+         money.setAmountInStock(10);
          inventoryList[1]= money;
          
          Inventory schematic = new Inventory();
@@ -141,7 +141,7 @@ public class ProgramController {
          
          Inventory food = new Inventory();
          food.setDescription("Food");
-         food.setAmountInStock(life);
+         food.setAmountInStock(10);
          inventoryList[8] = food;
          
          return inventoryList;
