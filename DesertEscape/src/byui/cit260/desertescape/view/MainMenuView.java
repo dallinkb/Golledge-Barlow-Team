@@ -89,7 +89,16 @@ public class MainMenuView extends View {
     }
 
     private void loadSavedGame() {
-        System.out.println("Called Resume game - not implemented yet");
+        System.out.println("Enter file name: ");
+        try {
+          Scanner keyboard = new Scanner(System.in);
+            String fileName = keyboard.nextLine();
+            ProgramController.loadGame(fileName);
+            GameMenuView gmv = new GameMenuView();
+            gmv.display();
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error on input");
+        }
     }
 
     private void displayOptionsMenu() {

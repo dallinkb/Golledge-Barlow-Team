@@ -9,6 +9,7 @@ import byui.cit260.desertescape.model.Game;
 import byui.cit260.desertescape.model.Player;
 import byui.cit260.desertescape.view.StartProgramView;
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 /********************************
@@ -51,7 +52,37 @@ public class DesertEscape {
     public static void main(String[] args) {
         
         //calls the startprogram class
-        StartProgramView startProgram = new StartProgramView();
+        StartProgramView startProgram = null;
+        
+        try {
+            inFiles = new BufferedReader(new InputStreamReader(System.in));
+            outFiles = new PrintWriter(System.out, true);
+            String logPath = "log.txt";
+            logFiles = new PrintWriter(logPath);
+            
+            startProgram = new StartProgramView();
+
+            startProgram.startProgram();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            startProgram.startProgram();
+        } finally {
+            try {
+                if (inFiles != null) {
+                    inFiles.close();
+                }
+                if (outFiles != null) {
+                    outFiles.close();
+                }
+                if (logFiles != null) {
+                    logFiles.close();
+                }
+            } catch (Exception ex) {
+                System.out.println("Error closing files");
+            }
+        }
+
         
         startProgram.startProgram();
     }

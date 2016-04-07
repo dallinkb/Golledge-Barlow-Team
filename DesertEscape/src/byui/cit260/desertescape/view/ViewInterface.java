@@ -11,7 +11,7 @@ package byui.cit260.desertescape.view;
  */
 public interface ViewInterface {
     
-    public void display();
+    public void display() throws Exception;
 
     public String getInput();
 

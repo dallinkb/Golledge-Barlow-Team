@@ -14,7 +14,6 @@ import byui.cit260.desertescape.model.Location;
 import byui.cit260.desertescape.model.LocationType;
 import byui.cit260.desertescape.view.View;
 import desertescape.DesertEscape;
-import java.io.Console;
 import java.util.Scanner;
 
 /**
@@ -123,7 +122,14 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Enter file name: ");
+        try {
+            Scanner keyboard = new Scanner(System.in);
+            String fileName = keyboard.nextLine();
+            ProgramController.saveGame(fileName);
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error on input");
+        }
     }
 
     private void completeAction() {

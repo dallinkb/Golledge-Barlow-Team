@@ -12,8 +12,13 @@ import byui.cit260.desertescape.model.Item;
 import byui.cit260.desertescape.model.Location;
 import byui.cit260.desertescape.model.Map;
 import byui.cit260.desertescape.model.Player;
+import byui.cit260.desertescape.view.ErrorView;
 import com.sun.corba.se.impl.orbutil.closure.Constant;
 import desertescape.DesertEscape;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.accessibility.AccessibleRole;
@@ -92,6 +97,35 @@ public class ProgramController {
         
         
      }
+    
+    //saves the game
+    public static void saveGame(String filePath) {
+        try {
+            FileOutputStream fos = new FileOutputStream(filePath);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            
+            oos.writeObject(DesertEscape.getGame());
+        } catch(Exception e) {
+            ErrorView.display("ProgramController", e.getMessage());
+        }
+    }
+    
+    //loads the saved game
+    public static void loadGame(String filePath) {
+        Game game = null;
+        
+        try {
+            FileInputStream fis = new FileInputStream(filePath);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            game = (Game)ois.readObject();
+            
+            DesertEscape.setGame(game);
+            DesertEscape.setPlayer(game.getPlayer());
+        } catch (Exception e) {
+            ErrorView.display("ProgramController", e.getMessage());
+        }
+    }
     
      public static Inventory[] createInventorylist(int life){
          
