@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.view.menu;
+package byui.cit260.desertescape.view;
 
+import byui.cit260.desertescape.view.GameMenuView;
 import byui.cit260.desertescape.control.ProgramController;
 import byui.cit260.desertescape.view.View;
-import byui.cit260.desertescape.view.menu.HelpMenuView;
+import byui.cit260.desertescape.view.HelpMenuView;
 import java.util.Scanner;
 import desertescape.DesertEscape;
 

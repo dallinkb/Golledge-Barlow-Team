@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.view.achievements;
+package byui.cit260.desertescape.view;
 
 import java.util.Scanner;
 
@@ -11,24 +11,17 @@ import java.util.Scanner;
  *
  * @author Dallin Barlow
  */
-public class GameWonView {
+public class InspectView {
     public void displayBanner(){
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n                    Winner"
-                +"\n You were able to travel back in time and"
-                +"\nwarn the people of earth that the aliens "
-                +"\nwould attack, You have saved all of humanity"
-                +"\nand won the game.";
+                +"\n                  Inspect                   ";
         System.out.println(banner);
     }
     private final String MENU =
-            "\nM - Main Menu"
-            + "\nE - Exit Game"
-            + "\n - "
-            + "\n - "
-            + "\n - ";
+            "\nK - Keep "
+            + "\nD - Discard";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -83,6 +76,5 @@ public class GameWonView {
                 break;
         }
     }
-    
     
 }

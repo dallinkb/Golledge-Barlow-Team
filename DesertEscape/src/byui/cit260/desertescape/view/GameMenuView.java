@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.view.menu;
+package byui.cit260.desertescape.view;
 
 import byui.cit260.desertescape.control.MovementController;
 import byui.cit260.desertescape.control.ProgramController;
@@ -13,7 +13,6 @@ import byui.cit260.desertescape.model.Item;
 import byui.cit260.desertescape.model.Location;
 import byui.cit260.desertescape.model.LocationType;
 import byui.cit260.desertescape.view.View;
-import byui.cit260.desertescape.view.actions.ShopView;
 import desertescape.DesertEscape;
 import java.io.Console;
 import java.util.Scanner;

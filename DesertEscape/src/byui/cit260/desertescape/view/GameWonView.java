@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.desertescape.view.achievements;
+package byui.cit260.desertescape.view;
 
 import java.util.Scanner;
 
@@ -11,19 +11,24 @@ import java.util.Scanner;
  *
  * @author Dallin Barlow
  */
-public class LostaLifeView {
+public class GameWonView {
     public void displayBanner(){
         String banner = "";
         banner =
                 "\n*********************************************"
-                +"\n                    Lost a Life"
-                +"\n you lost a life, with it you lost all your "
-                +"\n food and money. You wake up at the base.";
+                +"\n                    Winner"
+                +"\n You were able to travel back in time and"
+                +"\nwarn the people of earth that the aliens "
+                +"\nwould attack, You have saved all of humanity"
+                +"\nand won the game.";
         System.out.println(banner);
     }
     private final String MENU =
-            "\nC - Continue to Base"
-            + "\nE - Exit to Main Menu";
+            "\nM - Main Menu"
+            + "\nE - Exit Game"
+            + "\n - "
+            + "\n - "
+            + "\n - ";
     
     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
@@ -66,6 +71,13 @@ public class LostaLifeView {
             case '': 
                 
                 break;
+            case '':
+                
+                break;
+            case '':
+                
+                break;
+            case '': 
             default:
                 System.out.println("\n*** Not valid ***  Please try again");
                 break;
